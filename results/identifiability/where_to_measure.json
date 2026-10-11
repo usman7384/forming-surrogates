@@ -1,0 +1,366 @@
+{
+  "task": "G4b",
+  "title": "Where to measure: ID at which reduction, and unknown m",
+  "command": "python -m surrogates.gp_bo.measurement_design --out results/identifiability",
+  "git": "944dd15",
+  "data": {
+    "dataset": "solver sweep (standard ring)",
+    "n_runs": 55,
+    "splits": {}
+  },
+  "metrics": {
+    "designs": {
+      "force_only": [],
+      "force+ID@10%": [
+        0.1
+      ],
+      "force+ID@20%": [
+        0.2
+      ],
+      "force+ID@30%": [
+        0.3
+      ],
+      "force+ID@10%+30%": [
+        0.1,
+        0.3
+      ],
+      "force+ID@20%+30%": [
+        0.2,
+        0.3
+      ],
+      "force+ID@10%+20%": [
+        0.1,
+        0.2
+      ],
+      "force+ID@10%+20%+30%": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "force+ID@30% twice": [
+        0.3,
+        0.3
+      ]
+    },
+    "truths_mf_m": [
+      [
+        0.1,
+        0.15
+      ],
+      [
+        0.25,
+        0.15
+      ],
+      [
+        0.5,
+        0.15
+      ],
+      [
+        0.25,
+        0.05
+      ],
+      [
+        0.25,
+        0.3
+      ]
+    ],
+    "force_noise": 0.01,
+    "id_sigma_pct_points": 0.3,
+    "prior_logk_sigma": 0.075,
+    "m_prior": "uniform 0.05-0.30",
+    "mf_nodes": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "m_nodes": [
+      0.05,
+      0.1,
+      0.15,
+      0.225,
+      0.3
+    ],
+    "interpolation_check": {
+      "max_force_err_pct_leaving_out_m_0p15": 8.987512689603673,
+      "max_force_err_pct_leaving_out_m_0p15_mf_le_0p5": 1.4783121616957495,
+      "max_id_err_pts_leaving_out_m_0p15": 0.0918903865920715
+    },
+    "std_mf": {
+      "true_mf=0.1,true_m=0.15": {
+        "force_only": {
+          "std_mf_m_unknown": 0.1427122500191393,
+          "mean_mf_m_unknown": 0.2600000858999402,
+          "std_m_posterior": 0.03870475605392561,
+          "std_mf_m_known": 0.13441975781798432
+        },
+        "force+ID@10%": {
+          "std_mf_m_unknown": 0.014641923176057677,
+          "mean_mf_m_unknown": 0.10038274576868855,
+          "std_m_posterior": 0.029423165712705424,
+          "std_mf_m_known": 0.014166641386921893
+        },
+        "force+ID@20%": {
+          "std_mf_m_unknown": 0.006155463204645941,
+          "mean_mf_m_unknown": 0.10014851356658061,
+          "std_m_posterior": 0.02869310334934401,
+          "std_mf_m_known": 0.0061367663576750815
+        },
+        "force+ID@30%": {
+          "std_mf_m_unknown": 0.0034464211518591215,
+          "mean_mf_m_unknown": 0.10011125797435248,
+          "std_m_posterior": 0.028649720171134194,
+          "std_mf_m_known": 0.003434440547226705
+        },
+        "force+ID@10%+30%": {
+          "std_mf_m_unknown": 0.0033572990874137245,
+          "mean_mf_m_unknown": 0.10010958507346517,
+          "std_m_posterior": 0.028634703706959516,
+          "std_mf_m_known": 0.003343571016470467
+        },
+        "force+ID@20%+30%": {
+          "std_mf_m_unknown": 0.0029958516236326753,
+          "mean_mf_m_unknown": 0.10010048266030142,
+          "std_m_posterior": 0.028615200682325682,
+          "std_mf_m_known": 0.0029756613233619727
+        },
+        "force+ID@10%+20%": {
+          "std_mf_m_unknown": 0.005688245394268113,
+          "mean_mf_m_unknown": 0.10013966772675288,
+          "std_m_posterior": 0.02865573488776421,
+          "std_mf_m_known": 0.005673159341932467
+        },
+        "force+ID@10%+20%+30%": {
+          "std_mf_m_unknown": 0.0029304267258696316,
+          "mean_mf_m_unknown": 0.10009959411052201,
+          "std_m_posterior": 0.028603599491368887,
+          "std_mf_m_known": 0.002907794304602135
+        },
+        "force+ID@30% twice": {
+          "std_mf_m_unknown": 0.0022579948620903905,
+          "mean_mf_m_unknown": 0.10007996609064429,
+          "std_m_posterior": 0.028592396636693405,
+          "std_mf_m_known": 0.0022214617030293536
+        }
+      },
+      "true_mf=0.25,true_m=0.15": {
+        "force_only": {
+          "std_mf_m_unknown": 0.14033722064490953,
+          "mean_mf_m_unknown": 0.31966231248326094,
+          "std_m_posterior": 0.03542760489315832,
+          "std_mf_m_known": 0.09136793245107619
+        },
+        "force+ID@10%": {
+          "std_mf_m_unknown": 0.017690722247690957,
+          "mean_mf_m_unknown": 0.25273471753350785,
+          "std_m_posterior": 0.027791259264215162,
+          "std_mf_m_known": 0.016842808427100644
+        },
+        "force+ID@20%": {
+          "std_mf_m_unknown": 0.009045819141591388,
+          "mean_mf_m_unknown": 0.25151735260693836,
+          "std_m_posterior": 0.027735337935756194,
+          "std_mf_m_known": 0.007817824378660371
+        },
+        "force+ID@30%": {
+          "std_mf_m_unknown": 0.00625162106311926,
+          "mean_mf_m_unknown": 0.251253882392634,
+          "std_m_posterior": 0.02779939524179247,
+          "std_mf_m_known": 0.004621834345311357
+        },
+        "force+ID@10%+30%": {
+          "std_mf_m_unknown": 0.006156765948794937,
+          "mean_mf_m_unknown": 0.25125359512928697,
+          "std_m_posterior": 0.027755924095904626,
+          "std_mf_m_known": 0.004458230515426635
+        },
+        "force+ID@20%+30%": {
+          "std_mf_m_unknown": 0.005855831482431099,
+          "mean_mf_m_unknown": 0.25124133136600585,
+          "std_m_posterior": 0.027739518138100716,
+          "std_mf_m_known": 0.003981107628817847
+        },
+        "force+ID@10%+20%": {
+          "std_mf_m_unknown": 0.008451512885419947,
+          "mean_mf_m_unknown": 0.2514617786585698,
+          "std_m_posterior": 0.027710927726903773,
+          "std_mf_m_known": 0.007096994242330756
+        },
+        "force+ID@10%+20%+30%": {
+          "std_mf_m_unknown": 0.005801230076124679,
+          "mean_mf_m_unknown": 0.2512422252807749,
+          "std_m_posterior": 0.027708793527929005,
+          "std_mf_m_known": 0.003874793129089941
+        },
+        "force+ID@30% twice": {
+          "std_mf_m_unknown": 0.005333836268657168,
+          "mean_mf_m_unknown": 0.2511944946680618,
+          "std_m_posterior": 0.02778505628738337,
+          "std_mf_m_known": 0.003257840737455042
+        }
+      },
+      "true_mf=0.5,true_m=0.15": {
+        "force_only": {
+          "std_mf_m_unknown": 0.12382739273203003,
+          "mean_mf_m_unknown": 0.40828228832517544,
+          "std_m_posterior": 0.03350488430332418,
+          "std_mf_m_known": 0.08612649567547681
+        },
+        "force+ID@10%": {
+          "std_mf_m_unknown": 0.032734663587962426,
+          "mean_mf_m_unknown": 0.48724114349194325,
+          "std_m_posterior": 0.02326579321295593,
+          "std_mf_m_known": 0.020690624987631103
+        },
+        "force+ID@20%": {
+          "std_mf_m_unknown": 0.024804014955719,
+          "mean_mf_m_unknown": 0.49619331092541735,
+          "std_m_posterior": 0.021119277367237725,
+          "std_mf_m_known": 0.011817921966837248
+        },
+        "force+ID@30%": {
+          "std_mf_m_unknown": 0.021160203454212306,
+          "mean_mf_m_unknown": 0.49930924230567225,
+          "std_m_posterior": 0.020342813494636503,
+          "std_mf_m_known": 0.007911289308448623
+        },
+        "force+ID@10%+30%": {
+          "std_mf_m_unknown": 0.02064746551477183,
+          "mean_mf_m_unknown": 0.4996737829880229,
+          "std_m_posterior": 0.0196304228719358,
+          "std_mf_m_known": 0.007598231611130463
+        },
+        "force+ID@20%+30%": {
+          "std_mf_m_unknown": 0.020763981665929562,
+          "mean_mf_m_unknown": 0.4996574508477557,
+          "std_m_posterior": 0.01968055709173147,
+          "std_mf_m_known": 0.006695427953399181
+        },
+        "force+ID@10%+20%": {
+          "std_mf_m_unknown": 0.024540686425891193,
+          "mean_mf_m_unknown": 0.4964569215271053,
+          "std_m_posterior": 0.02092370038466686,
+          "std_mf_m_known": 0.010869345158926685
+        },
+        "force+ID@10%+20%+30%": {
+          "std_mf_m_unknown": 0.02042092693778495,
+          "mean_mf_m_unknown": 0.4998921381602692,
+          "std_m_posterior": 0.019229545843619956,
+          "std_mf_m_known": 0.006501632170582301
+        },
+        "force+ID@30% twice": {
+          "std_mf_m_unknown": 0.020579605358561747,
+          "mean_mf_m_unknown": 0.4998993522277114,
+          "std_m_posterior": 0.020216264266964264,
+          "std_mf_m_known": 0.005652830712942483
+        }
+      },
+      "true_mf=0.25,true_m=0.05": {
+        "force_only": {
+          "std_mf_m_unknown": 0.15554539793249467,
+          "mean_mf_m_unknown": 0.31609425506728883,
+          "std_m_posterior": 0.03485898186385282
+        },
+        "force+ID@10%": {
+          "std_mf_m_unknown": 0.015582432612384501,
+          "mean_mf_m_unknown": 0.25728436005136285,
+          "std_m_posterior": 0.02064914115275358
+        },
+        "force+ID@20%": {
+          "std_mf_m_unknown": 0.008542340379547328,
+          "mean_mf_m_unknown": 0.25560402524423304,
+          "std_m_posterior": 0.0203706691928961
+        },
+        "force+ID@30%": {
+          "std_mf_m_unknown": 0.005986720286118373,
+          "mean_mf_m_unknown": 0.2544386000755997,
+          "std_m_posterior": 0.020316360212254473
+        },
+        "force+ID@10%+30%": {
+          "std_mf_m_unknown": 0.005970928455022883,
+          "mean_mf_m_unknown": 0.2544853009623244,
+          "std_m_posterior": 0.020072771382618575
+        },
+        "force+ID@20%+30%": {
+          "std_mf_m_unknown": 0.005838062016408059,
+          "mean_mf_m_unknown": 0.2546127836987673,
+          "std_m_posterior": 0.020081073496813918
+        },
+        "force+ID@10%+20%": {
+          "std_mf_m_unknown": 0.008231760173666457,
+          "mean_mf_m_unknown": 0.2557589646502071,
+          "std_m_posterior": 0.020316387916011612
+        },
+        "force+ID@10%+20%+30%": {
+          "std_mf_m_unknown": 0.005830870088622959,
+          "mean_mf_m_unknown": 0.2546244539155333,
+          "std_m_posterior": 0.019895688860861814
+        },
+        "force+ID@30% twice": {
+          "std_mf_m_unknown": 0.005294996526059612,
+          "mean_mf_m_unknown": 0.2543842738797937,
+          "std_m_posterior": 0.020290994373445267
+        }
+      },
+      "true_mf=0.25,true_m=0.3": {
+        "force_only": {
+          "std_mf_m_unknown": 0.1012779685532481,
+          "mean_mf_m_unknown": 0.33935874585093256,
+          "std_m_posterior": 0.016248515834417433
+        },
+        "force+ID@10%": {
+          "std_mf_m_unknown": 0.020236932479790574,
+          "mean_mf_m_unknown": 0.2531753394251477,
+          "std_m_posterior": 0.01698738691870492
+        },
+        "force+ID@20%": {
+          "std_mf_m_unknown": 0.009535647378390357,
+          "mean_mf_m_unknown": 0.24980143386110057,
+          "std_m_posterior": 0.01689638679860996
+        },
+        "force+ID@30%": {
+          "std_mf_m_unknown": 0.0057881013087915335,
+          "mean_mf_m_unknown": 0.24915867888563967,
+          "std_m_posterior": 0.016874249496480614
+        },
+        "force+ID@10%+30%": {
+          "std_mf_m_unknown": 0.0055962632613242354,
+          "mean_mf_m_unknown": 0.249137765157641,
+          "std_m_posterior": 0.01687563591934165
+        },
+        "force+ID@20%+30%": {
+          "std_mf_m_unknown": 0.005055716069510135,
+          "mean_mf_m_unknown": 0.24907204854956136,
+          "std_m_posterior": 0.016872561946362826
+        },
+        "force+ID@10%+20%": {
+          "std_mf_m_unknown": 0.008671811052382166,
+          "mean_mf_m_unknown": 0.24963371182376434,
+          "std_m_posterior": 0.016896050409577475
+        },
+        "force+ID@10%+20%+30%": {
+          "std_mf_m_unknown": 0.004932645716332551,
+          "mean_mf_m_unknown": 0.2490609825386113,
+          "std_m_posterior": 0.016873685862218355
+        },
+        "force+ID@30% twice": {
+          "std_mf_m_unknown": 0.00425632022063121,
+          "mean_mf_m_unknown": 0.24898621736819618,
+          "std_m_posterior": 0.016868976833326544
+        }
+      }
+    }
+  },
+  "figures": [
+    "results/identifiability/figures/where_to_measure.png"
+  ],
+  "notes": "Noise-free data (typical widths). Force includes the m-dependent speed factor (V/h0)^m with V/h0 = 1.5 (solver units, standard ring); an earlier version wrongly used V/h0 = 1. Standard ring only.",
+  "created": "2026-10-12T14:51:47"
+}

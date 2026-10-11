@@ -1,0 +1,260 @@
+{
+  "task": "G5",
+  "title": "Best ring geometry for sensing friction",
+  "command": "python -m surrogates.gp_bo.design --out results/design --workers 4",
+  "git": "944dd15",
+  "data": {
+    "dataset": "full",
+    "n_runs": 382,
+    "splits": {
+      "gp_train_runs": 360,
+      "solver_check_runs": 22
+    }
+  },
+  "metrics": {
+    "measurement_sigma_pct_points": 0.3,
+    "reduction": 0.3,
+    "m": 0.15,
+    "search_box": {
+      "od_id": [
+        1.6,
+        2.4
+      ],
+      "h_id": [
+        0.4,
+        1.0
+      ]
+    },
+    "bo": {
+      "n_evaluations": 30,
+      "best_od_id": 2.3535424033318337,
+      "best_h_id": 0.8051544950314029,
+      "best_objective": 0.010341827945727262,
+      "objective_common_range": 0.010341827945727262
+    },
+    "grid_search": {
+      "best_od_id": 2.36,
+      "best_h_id": 0.79,
+      "best_objective": 0.010302508312850114,
+      "n_evaluations": 441
+    },
+    "standard_ring": {
+      "od_id": 2.0,
+      "h_id": 0.6666666666666666,
+      "objective": 0.016911680317050853,
+      "objective_common_range": 0.016911680317050853
+    },
+    "improvement_factor_gp": 1.6352699354312825,
+    "objective_definition": "mean over true m_f in [0.05, 0.95] of the posterior std of m_f after one ID measurement (GP forward model; GP variance added to measurement variance)",
+    "solver_check": {
+      "mf_nodes": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "common_range_mf": [
+        0.0,
+        1.0
+      ],
+      "standard": {
+        "od_id": 2.0,
+        "h_id": 0.6666666666666666,
+        "stopped_early_at_mf": [],
+        "id_pct_at_30": [
+          19.52208880760562,
+          10.489182049826361,
+          2.136733523175627,
+          -4.4400681250182705,
+          -10.232586539399502,
+          -14.755589885938235,
+          -17.891786585078773,
+          -19.883444532458427,
+          -21.100072281251848,
+          -21.85245605146755,
+          -22.249415605701106
+        ],
+        "complete": true,
+        "last_solved_mf": 1.0,
+        "objective_full_range_0_to_1": 0.01572871167080067,
+        "objective_full_range_extrapolated": null,
+        "objective_common_range": 0.01572871167080067,
+        "objective_0_to_0p9": 0.011466414245835364,
+        "std_by_true_mf": [
+          0.0033104687628830974,
+          0.0034410251487968545,
+          0.0035200593307162437,
+          0.004066950836390426,
+          0.004623623903012228,
+          0.004868838643971856,
+          0.005109392288875704,
+          0.005856606933924545,
+          0.0065572993406737565,
+          0.008011645688809205,
+          0.00954141091880131,
+          0.012199006511563292,
+          0.015332943295871135,
+          0.019989650357318752,
+          0.025932984608598632,
+          0.03415635490549409,
+          0.04509849210884888,
+          0.04606807207799422,
+          0.041160696082668605
+        ]
+      },
+      "best": {
+        "od_id": 2.3535424033318337,
+        "h_id": 0.8051544950314029,
+        "stopped_early_at_mf": [],
+        "id_pct_at_30": [
+          19.52208880760546,
+          10.36020007449636,
+          1.8647892910539814,
+          -5.334122170855091,
+          -11.999322688920563,
+          -17.68532696232192,
+          -22.21959872788371,
+          -25.513979891617716,
+          -27.827826583838103,
+          -29.37936240143141,
+          -30.41439993513239
+        ],
+        "complete": true,
+        "last_solved_mf": 1.0,
+        "objective_full_range_0_to_1": 0.009264499347202793,
+        "objective_full_range_extrapolated": null,
+        "objective_common_range": 0.009264499347202793,
+        "objective_0_to_0p9": 0.007388030415081554,
+        "std_by_true_mf": [
+          0.003261664338120543,
+          0.0033904162526819993,
+          0.0034890589845914207,
+          0.0038461901535143815,
+          0.004212096257979383,
+          0.0043347478047471395,
+          0.004458140610454928,
+          0.00486757960068362,
+          0.005237227403088196,
+          0.0059113454330933625,
+          0.006556893552257741,
+          0.007805561088396877,
+          0.009108108777049208,
+          0.01096710312584782,
+          0.013040230108557475,
+          0.016112308652057983,
+          0.019774685987788032,
+          0.024241300879321193,
+          0.025410828586621786
+        ]
+      },
+      "improvement_factor_solver_common_range": 1.6977400592671639,
+      "improvement_factor_solver_0_to_0p9": 1.5520258582623594,
+      "improvement_factor_solver_full_range_extrapolated": null,
+      "note": "common range = [0, last m_f solved to 30% by both rings]; objectives there use no extrapolation. The 'full range extrapolated' value is the earlier headline, kept for comparison; it extrapolates ID(m_f) past the last solved node for an incomplete sweep.",
+      "true_mf_values": [
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.39999999999999997,
+        0.44999999999999996,
+        0.49999999999999994,
+        0.5499999999999999,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.7999999999999999,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "improvement_factor_solver_truths_le_0p6": 1.2394140877393902,
+      "improvement_factor_solver_truths_gt_0p6": 1.9193462239941401,
+      "share_of_average_from_truths_gt_0p6_standard": 0.7620632630090348
+    },
+    "improvement_factor_gp_common_range": 1.6352699354312825,
+    "gp_std_by_true_mf": {
+      "true_mf": [
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.39999999999999997,
+        0.44999999999999996,
+        0.49999999999999994,
+        0.5499999999999999,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.7999999999999999,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "standard": [
+        0.0034622250409403876,
+        0.0036241297107860214,
+        0.004120974641160943,
+        0.0046484356535535015,
+        0.0050376065030173535,
+        0.00530549946701495,
+        0.005561287824902845,
+        0.005949553777743405,
+        0.006844668748496203,
+        0.008480045033983584,
+        0.010665038402557801,
+        0.01327614557768757,
+        0.0168089152787188,
+        0.021775146842580622,
+        0.02795989440925997,
+        0.03773364189881788,
+        0.050010017754416464,
+        0.04796822310946074,
+        0.042090476348867166
+      ],
+      "best": [
+        0.004262243675745793,
+        0.003827542891434587,
+        0.003825918978251931,
+        0.004095947529413789,
+        0.004518945349556667,
+        0.004914474939797264,
+        0.005280100261154222,
+        0.005614490954224758,
+        0.005945938047994825,
+        0.0064193299312618034,
+        0.007121555342255191,
+        0.008245440315963155,
+        0.010103404439786351,
+        0.01265555871295317,
+        0.015439788320115031,
+        0.018022738016491267,
+        0.02104930988922276,
+        0.027938548612119536,
+        0.02721345476107588
+      ]
+    },
+    "improvement_factor_gp_truths_le_0p6": 1.2013936918064532
+  },
+  "figures": [
+    "results/design/figures/design_map.png",
+    "results/design/figures/std_vs_mf_best_vs_standard.png"
+  ],
+  "notes": "Forward model is the ID GP in artifacts/gp (trained on the dataset named in artifacts/gp/meta.json); search box = training box, so no extrapolation. Rings are ranked by sensitivity to friction only; manufacturability and force-capacity limits are not considered.",
+  "created": "2026-10-12T14:52:59"
+}
