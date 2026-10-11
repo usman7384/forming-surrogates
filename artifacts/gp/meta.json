@@ -1,0 +1,32 @@
+{
+  "name": "gp-matern52-ard",
+  "version": "6b15975",
+  "dataset": "full",
+  "reductions": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "n_train_rows": 1040,
+  "seed": 0,
+  "command": "python -m surrogates.gp_bo.run --data full --out results/gp --threads 4",
+  "features": [
+    "od_id",
+    "h_id",
+    "mf",
+    "m",
+    "reduction"
+  ],
+  "env": {
+    "torch": "2.14.1+cpu",
+    "gpytorch": "1.15.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "torch_threads": 4
+  },
+  "served_sd": "conformal",
+  "sd_scale": {
+    "id": 0.9102246683071226,
+    "force": 1.3498415361893898
+  }
+}

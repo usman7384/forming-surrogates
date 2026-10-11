@@ -1,0 +1,204 @@
+{
+  "task": "G3",
+  "title": "Inverse friction by brentq",
+  "command": "python -m surrogates.gp_bo.inverse --out results/gp",
+  "git": "6b15975",
+  "data": {
+    "dataset": "solver calls (standard ring 6:3:2, m=0.15, 30% reduction)",
+    "n_runs": 32,
+    "splits": {}
+  },
+  "metrics": {
+    "xtol": 0.001,
+    "results": [
+      {
+        "target_id_pct": 10.0,
+        "mf_root": 0.1055610621859939,
+        "solver_calls": 6,
+        "residual_pct": -0.006942076950702258,
+        "iterations": 5,
+        "converged": true,
+        "calls": [
+          {
+            "mf": 0.0,
+            "id_pct": 19.52208880760562
+          },
+          {
+            "mf": 1.0,
+            "id_pct": -22.249415605701106
+          },
+          {
+            "mf": 0.22795656851114668,
+            "id_pct": 0.20745173932648076
+          },
+          {
+            "mf": 0.11238226646282862,
+            "id_pct": 9.384696292801632
+          },
+          {
+            "mf": 0.1055610621859939,
+            "id_pct": 9.993057923049298
+          },
+          {
+            "mf": 0.10506106218599386,
+            "id_pct": 10.037658774322967
+          }
+        ],
+        "seconds": 0.07348418235778809,
+        "gp_root_mf": 0.10579666576031085,
+        "solver_id_at_gp_root_pct": 9.97204206710931,
+        "gp_root_error_mf": 0.000235603574316956
+      },
+      {
+        "target_id_pct": -5.0,
+        "mf_root": 0.30904488529678553,
+        "solver_calls": 7,
+        "residual_pct": -0.0030262859600771463,
+        "iterations": 6,
+        "converged": true,
+        "calls": [
+          {
+            "mf": 0.0,
+            "id_pct": 19.52208880760562
+          },
+          {
+            "mf": 1.0,
+            "id_pct": -22.249415605701106
+          },
+          {
+            "mf": 0.587053043744191,
+            "id_pct": -17.567551018066396
+          },
+          {
+            "mf": 0.2935265218720955,
+            "id_pct": -4.033743841051097
+          },
+          {
+            "mf": 0.31448306468847625,
+            "id_pct": -5.33861008322114
+          },
+          {
+            "mf": 0.30904488529678553,
+            "id_pct": -5.003026285960077
+          },
+          {
+            "mf": 0.3085448852967854,
+            "id_pct": -4.972059519841188
+          }
+        ],
+        "seconds": 0.07161736488342285,
+        "gp_root_mf": 0.3125856136932227,
+        "solver_id_at_gp_root_pct": -5.221778366637009,
+        "gp_root_error_mf": 0.003540728396437154
+      },
+      {
+        "target_id_pct": -15.0,
+        "mf_root": 0.5065634288518993,
+        "solver_calls": 9,
+        "residual_pct": 0.001029516828463528,
+        "iterations": 8,
+        "converged": true,
+        "calls": [
+          {
+            "mf": 0.0,
+            "id_pct": 19.52208880760562
+          },
+          {
+            "mf": 1.0,
+            "id_pct": -22.249415605701106
+          },
+          {
+            "mf": 0.8264506938995538,
+            "id_pct": -21.325563950639538
+          },
+          {
+            "mf": 0.4132253469497769,
+            "id_pct": -10.91063302450449
+          },
+          {
+            "mf": 0.5754760713413964,
+            "id_pct": -17.23529595855756
+          },
+          {
+            "mf": 0.5181325587641646,
+            "id_pct": -15.436177512324411
+          },
+          {
+            "mf": 0.5055701461462272,
+            "id_pct": -14.96255141200069
+          },
+          {
+            "mf": 0.5065634288518993,
+            "id_pct": -14.998970483171536
+          },
+          {
+            "mf": 0.5070634288518996,
+            "id_pct": -15.017248510826741
+          }
+        ],
+        "seconds": 0.0939340591430664,
+        "gp_root_mf": 0.5081458851432256,
+        "solver_id_at_gp_root_pct": -15.056693593820746,
+        "gp_root_error_mf": 0.0015824562913262508
+      },
+      {
+        "target_id_pct": -20.0,
+        "mf_root": 0.707931395228895,
+        "solver_calls": 10,
+        "residual_pct": 0.00019184156651519402,
+        "iterations": 9,
+        "converged": true,
+        "calls": [
+          {
+            "mf": 0.0,
+            "id_pct": 19.52208880760562
+          },
+          {
+            "mf": 1.0,
+            "id_pct": -22.249415605701106
+          },
+          {
+            "mf": 0.9461495189772353,
+            "id_pct": -22.07326509517116
+          },
+          {
+            "mf": 0.47307475948861766,
+            "id_pct": -13.666271049959
+          },
+          {
+            "mf": 0.8294836356687036,
+            "id_pct": -21.34953555412017
+          },
+          {
+            "mf": 0.6501484140534157,
+            "id_pct": -19.004207319716436
+          },
+          {
+            "mf": 0.7262915731992979,
+            "id_pct": -20.253926205195327
+          },
+          {
+            "mf": 0.710820299076647,
+            "id_pct": -20.041343050738615
+          },
+          {
+            "mf": 0.707931395228895,
+            "id_pct": -19.999808158433485
+          },
+          {
+            "mf": 0.7084313952288953,
+            "id_pct": -20.00703935460909
+          }
+        ],
+        "seconds": 0.1358025074005127,
+        "gp_root_mf": 0.7119268058568808,
+        "solver_id_at_gp_root_pct": -20.057095209032827,
+        "gp_root_error_mf": 0.003995410627985807
+      }
+    ],
+    "total_solver_calls": 32
+  },
+  "figures": [],
+  "notes": "solver_calls counts brentq function evaluations; results may have been served from the solver cache (deterministic solver, so the count is what a cold start needs). The 3 first targets are in the sensitive range; the last is in the flat high-friction range, where the root is found but is poorly determined by a noisy measurement.",
+  "created": "2026-10-12T09:42:39"
+}

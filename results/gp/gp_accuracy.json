@@ -1,0 +1,715 @@
+{
+  "task": "G1",
+  "title": "GP accuracy and coverage",
+  "command": "python -m surrogates.gp_bo.run --data full --out results/gp --threads 4",
+  "git": "6b15975",
+  "data": {
+    "dataset": "full",
+    "n_runs": 460,
+    "splits": {
+      "test_fine_mesh": 20,
+      "test_ood_geometry": 40,
+      "test_random": 40,
+      "train": 360
+    },
+    "reductions": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "rows": {
+      "train": 1040,
+      "test_random": 115,
+      "test_ood_geometry": 112,
+      "test_fine_mesh": 53
+    }
+  },
+  "metrics": {
+    "rmse_id_change_pct": {
+      "gp": {
+        "train": 0.0011574400461350854,
+        "test_random": 0.09301768337551426,
+        "test_ood_geometry": 0.805430374153565,
+        "test_fine_mesh": 0.14209935904747234
+      },
+      "gp_conformal": {
+        "train": 0.0011574400461350854,
+        "test_random": 0.09301768337551426,
+        "test_ood_geometry": 0.805430374153565,
+        "test_fine_mesh": 0.14209935904747234
+      },
+      "poly": {
+        "train": 0.8551665074365452,
+        "test_random": 0.9194378959900029,
+        "test_ood_geometry": 2.749151200450629,
+        "test_fine_mesh": 0.8193831843606363
+      },
+      "gbt": {
+        "train": 0.6301065601516578,
+        "test_random": 1.2147027999951423,
+        "test_ood_geometry": 4.341028251022687,
+        "test_fine_mesh": 1.149113994918753
+      }
+    },
+    "coverage95_id_change_pct": {
+      "gp": {
+        "train": 1.0,
+        "test_random": 0.9826086956521739,
+        "test_ood_geometry": 0.9910714285714286,
+        "test_fine_mesh": 0.9433962264150944
+      },
+      "gp_conformal": {
+        "train": 1.0,
+        "test_random": 0.9826086956521739,
+        "test_ood_geometry": 0.9910714285714286,
+        "test_fine_mesh": 0.9433962264150944
+      }
+    },
+    "mean_std_id_change_pct": {
+      "gp": {
+        "train": 0.018553807693459892,
+        "test_random": 0.16283002369080501,
+        "test_ood_geometry": 1.1468322705551885,
+        "test_fine_mesh": 0.1501089436205894
+      },
+      "gp_conformal": {
+        "train": 0.01688813345361367,
+        "test_random": 0.1482119043044039,
+        "test_ood_geometry": 1.0438750230700007,
+        "test_fine_mesh": 0.13663286341698358
+      }
+    },
+    "crps_id_change_pct": {
+      "gp": {
+        "train": 0.004364647963129159,
+        "test_random": 0.05576584784718836,
+        "test_ood_geometry": 0.4049111192741951,
+        "test_fine_mesh": 0.07154600418755463
+      },
+      "gp_conformal": {
+        "train": 0.003978196094838951,
+        "test_random": 0.05364596295171121,
+        "test_ood_geometry": 0.3923015923126606,
+        "test_fine_mesh": 0.07038407157646803
+      }
+    },
+    "pit_hist10_id_change_pct": {
+      "gp": {
+        "train": [
+          0,
+          0,
+          0,
+          4,
+          529,
+          501,
+          6,
+          0,
+          0,
+          0
+        ],
+        "test_random": [
+          5,
+          8,
+          3,
+          14,
+          39,
+          25,
+          12,
+          6,
+          1,
+          2
+        ],
+        "test_ood_geometry": [
+          1,
+          11,
+          7,
+          13,
+          10,
+          25,
+          27,
+          12,
+          4,
+          2
+        ],
+        "test_fine_mesh": [
+          5,
+          6,
+          4,
+          4,
+          10,
+          14,
+          6,
+          2,
+          1,
+          1
+        ]
+      },
+      "gp_conformal": {
+        "train": [
+          0,
+          0,
+          0,
+          9,
+          524,
+          499,
+          8,
+          0,
+          0,
+          0
+        ],
+        "test_random": [
+          7,
+          7,
+          6,
+          12,
+          37,
+          24,
+          12,
+          7,
+          0,
+          3
+        ],
+        "test_ood_geometry": [
+          2,
+          13,
+          6,
+          11,
+          10,
+          22,
+          30,
+          12,
+          4,
+          2
+        ],
+        "test_fine_mesh": [
+          7,
+          4,
+          4,
+          6,
+          8,
+          13,
+          6,
+          3,
+          1,
+          1
+        ]
+      }
+    },
+    "rmse_log_force_norm": {
+      "gp": {
+        "train": 0.010951396366277094,
+        "test_random": 0.016602852549336983,
+        "test_ood_geometry": 0.02326993220382689,
+        "test_fine_mesh": 0.026480417781782242
+      },
+      "gp_conformal": {
+        "train": 0.010951396366277094,
+        "test_random": 0.016602852549336983,
+        "test_ood_geometry": 0.02326993220382689,
+        "test_fine_mesh": 0.026480417781782242
+      },
+      "poly": {
+        "train": 0.014360023521100038,
+        "test_random": 0.017698460351295225,
+        "test_ood_geometry": 0.030060783486050825,
+        "test_fine_mesh": 0.02288126257391228
+      },
+      "gbt": {
+        "train": 0.01142035932612029,
+        "test_random": 0.024355473942929837,
+        "test_ood_geometry": 0.04926235535684394,
+        "test_fine_mesh": 0.03588743221689931
+      }
+    },
+    "coverage95_log_force_norm": {
+      "gp": {
+        "train": 0.9365384615384615,
+        "test_random": 0.8782608695652174,
+        "test_ood_geometry": 0.9375,
+        "test_fine_mesh": 0.7924528301886793
+      },
+      "gp_conformal": {
+        "train": 0.9663461538461539,
+        "test_random": 0.9391304347826087,
+        "test_ood_geometry": 0.9732142857142857,
+        "test_fine_mesh": 0.8490566037735849
+      }
+    },
+    "mean_std_log_force_norm": {
+      "gp": {
+        "train": 0.01308915443238635,
+        "test_random": 0.013288700836503513,
+        "test_ood_geometry": 0.024534014133239627,
+        "test_fine_mesh": 0.013269542627016913
+      },
+      "gp_conformal": {
+        "train": 0.017668284326432547,
+        "test_random": 0.017937640351107127,
+        "test_ood_geometry": 0.03311703132650438,
+        "test_fine_mesh": 0.0179117798041831
+      }
+    },
+    "crps_log_force_norm": {
+      "gp": {
+        "train": 0.005511495535282694,
+        "test_random": 0.007797231519013142,
+        "test_ood_geometry": 0.010619337121960282,
+        "test_fine_mesh": 0.012823731577114583
+      },
+      "gp_conformal": {
+        "train": 0.006200268753408166,
+        "test_random": 0.008268188309827106,
+        "test_ood_geometry": 0.011826308220695638,
+        "test_fine_mesh": 0.012929781345232793
+      }
+    },
+    "pit_hist10_log_force_norm": {
+      "gp": {
+        "train": [
+          50,
+          22,
+          26,
+          42,
+          389,
+          387,
+          47,
+          11,
+          8,
+          58
+        ],
+        "test_random": [
+          12,
+          5,
+          2,
+          5,
+          30,
+          43,
+          7,
+          4,
+          1,
+          6
+        ],
+        "test_ood_geometry": [
+          5,
+          2,
+          2,
+          22,
+          42,
+          18,
+          14,
+          2,
+          0,
+          5
+        ],
+        "test_fine_mesh": [
+          10,
+          0,
+          3,
+          7,
+          11,
+          12,
+          2,
+          3,
+          0,
+          5
+        ]
+      },
+      "gp_conformal": {
+        "train": [
+          37,
+          18,
+          25,
+          43,
+          406,
+          410,
+          30,
+          8,
+          23,
+          40
+        ],
+        "test_random": [
+          11,
+          2,
+          5,
+          2,
+          34,
+          46,
+          7,
+          1,
+          2,
+          5
+        ],
+        "test_ood_geometry": [
+          3,
+          3,
+          2,
+          13,
+          52,
+          26,
+          8,
+          0,
+          0,
+          5
+        ],
+        "test_fine_mesh": [
+          7,
+          3,
+          0,
+          8,
+          13,
+          12,
+          5,
+          0,
+          1,
+          4
+        ]
+      }
+    },
+    "gp_hyperparameters": {
+      "id_change_pct": {
+        "neg_mll_per_point": -1.069917392396506,
+        "lengthscales": {
+          "od_id": 1.4362702052933929,
+          "h_id": 1.5984257635011518,
+          "mf": 0.9170203794274361,
+          "m": 3.0311416316418898,
+          "reduction": 3.560587967775124
+        },
+        "outputscale": 4.4818479350049065,
+        "noise": 2.2516073819347967e-06,
+        "n_train": 1040,
+        "seed": 0,
+        "env": {
+          "torch": "2.14.1+cpu",
+          "gpytorch": "1.15.2",
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch_threads": 4
+        }
+      },
+      "log_force_norm": {
+        "neg_mll_per_point": -0.7255432490314282,
+        "lengthscales": {
+          "od_id": 2.689643127028357,
+          "h_id": 1.5352871177418672,
+          "mf": 0.7838032435352225,
+          "m": 3.3377808052362092,
+          "reduction": 2.488265150633248
+        },
+        "outputscale": 4.214468495178515,
+        "noise": 0.006603616472667971,
+        "n_train": 1040,
+        "seed": 0,
+        "env": {
+          "torch": "2.14.1+cpu",
+          "gpytorch": "1.15.2",
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch_threads": 4
+        }
+      }
+    },
+    "early_stop_handling": {
+      "train": {
+        "n_runs": 360,
+        "n_runs_early_stopped": 74,
+        "rows_per_reduction": {
+          "0.1": 360,
+          "0.2": 356,
+          "0.3": 324
+        },
+        "id_change_pct": {
+          "early_stopped_runs": {
+            "n_rows": 182,
+            "rmse": 0.0006367893675983681,
+            "coverage95": 1.0
+          },
+          "full_length_runs": {
+            "n_rows": 858,
+            "rmse": 0.00124009033792488,
+            "coverage95": 1.0
+          }
+        },
+        "log_force_norm": {
+          "early_stopped_runs": {
+            "n_rows": 182,
+            "rmse": 0.012149161569056382,
+            "coverage95": 0.9230769230769231
+          },
+          "full_length_runs": {
+            "n_rows": 858,
+            "rmse": 0.010680069808867057,
+            "coverage95": 0.9393939393939394
+          }
+        }
+      },
+      "test_random": {
+        "n_runs": 40,
+        "n_runs_early_stopped": 12,
+        "rows_per_reduction": {
+          "0.1": 40,
+          "0.2": 40,
+          "0.3": 35
+        },
+        "id_change_pct": {
+          "early_stopped_runs": {
+            "n_rows": 31,
+            "rmse": 0.11470327486797256,
+            "coverage95": 1.0
+          },
+          "full_length_runs": {
+            "n_rows": 84,
+            "rmse": 0.08360559363651524,
+            "coverage95": 0.9761904761904762
+          }
+        },
+        "log_force_norm": {
+          "early_stopped_runs": {
+            "n_rows": 31,
+            "rmse": 0.015905580448221216,
+            "coverage95": 0.7741935483870968
+          },
+          "full_length_runs": {
+            "n_rows": 84,
+            "rmse": 0.016852892855349928,
+            "coverage95": 0.9166666666666666
+          }
+        }
+      },
+      "test_ood_geometry": {
+        "n_runs": 40,
+        "n_runs_early_stopped": 9,
+        "rows_per_reduction": {
+          "0.1": 40,
+          "0.2": 39,
+          "0.3": 33
+        },
+        "id_change_pct": {
+          "early_stopped_runs": {
+            "n_rows": 19,
+            "rmse": 0.9011118391244873,
+            "coverage95": 1.0
+          },
+          "full_length_runs": {
+            "n_rows": 93,
+            "rmse": 0.7844481481019168,
+            "coverage95": 0.989247311827957
+          }
+        },
+        "log_force_norm": {
+          "early_stopped_runs": {
+            "n_rows": 19,
+            "rmse": 0.008164940808202995,
+            "coverage95": 1.0
+          },
+          "full_length_runs": {
+            "n_rows": 93,
+            "rmse": 0.025268492111695632,
+            "coverage95": 0.9247311827956989
+          }
+        }
+      },
+      "test_fine_mesh": {
+        "n_runs": 20,
+        "n_runs_early_stopped": 10,
+        "rows_per_reduction": {
+          "0.1": 20,
+          "0.2": 19,
+          "0.3": 14
+        },
+        "id_change_pct": {
+          "early_stopped_runs": {
+            "n_rows": 23,
+            "rmse": 0.10648549846144612,
+            "coverage95": 1.0
+          },
+          "full_length_runs": {
+            "n_rows": 30,
+            "rmse": 0.1642546157454771,
+            "coverage95": 0.9
+          }
+        },
+        "log_force_norm": {
+          "early_stopped_runs": {
+            "n_rows": 23,
+            "rmse": 0.021087890770479817,
+            "coverage95": 0.8695652173913043
+          },
+          "full_length_runs": {
+            "n_rows": 30,
+            "rmse": 0.029964525536141803,
+            "coverage95": 0.7333333333333333
+          }
+        }
+      }
+    },
+    "calibration": {
+      "protocol": "factor = conformal 95% quantile of |err|/sd on a run-wise 20% hold-out of train (GP fitted on the other 80%), applied to the GP fitted on all train runs; test splits not used",
+      "id_change_pct": {
+        "factor": 0.9102246683071226,
+        "n_rows_cal": 195,
+        "n_runs_cal": 72,
+        "n_rows_proper": 845,
+        "rmse_cal": 0.18727677284881547
+      },
+      "log_force_norm": {
+        "factor": 1.3498415361893898,
+        "n_rows_cal": 195,
+        "n_runs_cal": 72,
+        "n_rows_proper": 845,
+        "rmse_cal": 0.014077662444694519
+      }
+    },
+    "mlp_ensemble_same_rows": {
+      "source": "results/gnn/n5_mlp_baseline_full.json",
+      "command": "python -m surrogates.baselines.mlp_scalar --data full --out results/gnn --threads 4",
+      "members": 5,
+      "rmse_id_change_pct": {
+        "train": 0.079593048963452,
+        "test_random": 0.10380644391718159,
+        "test_ood_geometry": 0.7069727525083533,
+        "test_fine_mesh": 0.1202844413896279
+      },
+      "coverage95_id_change_pct": {
+        "train": 0.8413461538461539,
+        "test_random": 0.8782608695652174,
+        "test_ood_geometry": 0.9107142857142857,
+        "test_fine_mesh": 0.7735849056603774
+      },
+      "mean_std_id_change_pct": {
+        "train": 0.061185801943041636,
+        "test_random": 0.0910029988443773,
+        "test_ood_geometry": 0.3816171257432631,
+        "test_fine_mesh": 0.1020610507659954
+      },
+      "rmse_log_force_norm": {
+        "train": 0.006873130449723287,
+        "test_random": 0.02118359826526392,
+        "test_ood_geometry": 0.01939791422945956,
+        "test_fine_mesh": 0.031038643478641305
+      },
+      "coverage95_log_force_norm": {
+        "train": 0.8576923076923076,
+        "test_random": 0.7478260869565218,
+        "test_ood_geometry": 0.8839285714285714,
+        "test_fine_mesh": 0.6415094339622641
+      },
+      "mean_std_log_force_norm": {
+        "train": 0.0020207122287216467,
+        "test_random": 0.003635964742607063,
+        "test_ood_geometry": 0.01093333084969186,
+        "test_fine_mesh": 0.004574968622678412
+      }
+    },
+    "data_support_flag": {
+      "rule": "out of support iff >50% of >=5 training runs within +-0.10 in m_f and H/ID ended before the requested reduction",
+      "by_split": {
+        "train": {
+          "n_rows": 1040,
+          "n_rows_flagged_out_of_support": 8,
+          "id_change_pct": {
+            "in_support": {
+              "rmse": 0.001156552892830986,
+              "coverage95": 1.0,
+              "n_rows": 1032
+            },
+            "out_of_support": {
+              "rmse": 0.001266683558157432,
+              "coverage95": 1.0,
+              "n_rows": 8
+            }
+          },
+          "log_force_norm": {
+            "in_support": {
+              "rmse": 0.010744887133478364,
+              "coverage95": 0.937984496124031,
+              "n_rows": 1032
+            },
+            "out_of_support": {
+              "rmse": 0.026418087957431034,
+              "coverage95": 0.75,
+              "n_rows": 8
+            }
+          }
+        },
+        "test_random": {
+          "n_rows": 115,
+          "n_rows_flagged_out_of_support": 1,
+          "id_change_pct": {
+            "in_support": {
+              "rmse": 0.09341802588981764,
+              "coverage95": 0.9824561403508771,
+              "n_rows": 114
+            },
+            "out_of_support": {
+              "rmse": 0.011980876085697645,
+              "coverage95": 1.0,
+              "n_rows": 1
+            }
+          },
+          "log_force_norm": {
+            "in_support": {
+              "rmse": 0.016263113070229856,
+              "coverage95": 0.8859649122807017,
+              "n_rows": 114
+            },
+            "out_of_support": {
+              "rmse": 0.03935179082746654,
+              "coverage95": 0.0,
+              "n_rows": 1
+            }
+          }
+        },
+        "test_ood_geometry": {
+          "n_rows": 112,
+          "n_rows_flagged_out_of_support": 0,
+          "id_change_pct": {
+            "in_support": {
+              "rmse": 0.805430374153565,
+              "coverage95": 0.9910714285714286,
+              "n_rows": 112
+            }
+          },
+          "log_force_norm": {
+            "in_support": {
+              "rmse": 0.02326993220382689,
+              "coverage95": 0.9375,
+              "n_rows": 112
+            }
+          }
+        },
+        "test_fine_mesh": {
+          "n_rows": 53,
+          "n_rows_flagged_out_of_support": 0,
+          "id_change_pct": {
+            "in_support": {
+              "rmse": 0.14209935904747234,
+              "coverage95": 0.9433962264150944,
+              "n_rows": 53
+            }
+          },
+          "log_force_norm": {
+            "in_support": {
+              "rmse": 0.026480417781782242,
+              "coverage95": 0.7924528301886793,
+              "n_rows": 53
+            }
+          }
+        }
+      }
+    },
+    "served_sd": {
+      "choice": "conformal",
+      "rule": "conformal if ID coverage95 after scaling is >= 0.90 on both test_random and test_ood_geometry, else raw GP sd",
+      "id_scale": 0.9102246683071226
+    }
+  },
+  "figures": [
+    "results/gp/figures/parity.png",
+    "results/gp/figures/coverage.png",
+    "results/gp/figures/pit.png",
+    "results/gp/figures/ard.png"
+  ],
+  "notes": "Fit on train only. RMSE of inner-diameter change is in percentage points; force target is log(F*) so its RMSE is a relative error. Baselines: cubic ridge polynomial, gradient-boosted trees. Coverage is for the GP predictive interval (incl. noise).",
+  "created": "2026-10-12T09:40:47"
+}

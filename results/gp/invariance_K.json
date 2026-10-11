@@ -1,0 +1,89 @@
+{
+  "task": "G2",
+  "title": "Invariance of shape to material strength K",
+  "command": "python -m surrogates.gp_bo.invariance --data full --out results/gp --threads 2",
+  "git": "c63da11",
+  "data": {
+    "dataset": "full",
+    "n_runs": 10,
+    "splits": {},
+    "gp_rows": 1070
+  },
+  "metrics": {
+    "n_extra_solver_runs": 10,
+    "K_values": [
+      0.6,
+      1.6
+    ],
+    "n_base_cases": 5,
+    "max_abs_id_difference_pct_points": 1.887379141862766e-13,
+    "max_rel_force_norm_difference": 1.4765966227514582e-14,
+    "max_rel_raw_force_vs_K_times_base": 1.4876988529977098e-14,
+    "gp_with_K_input": {
+      "id_change_pct": {
+        "with_K": {
+          "neg_mll_per_point": -1.1075456754758404,
+          "lengthscales": {
+            "od_id": 1.5554201318011611,
+            "h_id": 1.3777483789779437,
+            "mf": 0.8565911416954154,
+            "m": 3.6625608537835754,
+            "reduction": 3.0772092198138647,
+            "logK": 75.35825720036864
+          },
+          "outputscale": 3.4997134389103857,
+          "noise": 1.6738290482782409e-06,
+          "n_train": 1070,
+          "seed": 0,
+          "env": {
+            "torch": "2.14.1+cpu",
+            "gpytorch": "1.15.2",
+            "numpy": "2.4.6",
+            "scipy": "1.17.1",
+            "torch_threads": 2
+          }
+        },
+        "without_K_neg_mll_per_point": -1.1012096426896545,
+        "K_lengthscale": 75.35825720036864,
+        "K_over_median_other": 48.44881177737138
+      },
+      "log_force_raw": {
+        "with_K": {
+          "neg_mll_per_point": -1.5513827453699922,
+          "lengthscales": {
+            "od_id": 3.0309963423886703,
+            "h_id": 3.2328678377746014,
+            "mf": 2.2173998200195104,
+            "m": 6.4146768736890065,
+            "reduction": 6.741805147850254,
+            "logK": 1.8309029210284737
+          },
+          "outputscale": 8.264223784570534,
+          "noise": 0.0009635315907133026,
+          "n_train": 1070,
+          "seed": 0,
+          "env": {
+            "torch": "2.14.1+cpu",
+            "gpytorch": "1.15.2",
+            "numpy": "2.4.6",
+            "scipy": "1.17.1",
+            "torch_threads": 2
+          }
+        },
+        "without_K_neg_mll_per_point": -0.0503857204913082,
+        "K_lengthscale": 1.8309029210284737,
+        "K_over_median_other": 0.5663401700605263
+      }
+    },
+    "upper_bound_lengthscale_unit_box": 1000.0,
+    "K_range_for_unit_box": [
+      0.5,
+      2.0
+    ]
+  },
+  "figures": [
+    "results/gp/figures/ard_with_K.png"
+  ],
+  "notes": "Extra runs re-solve dataset train cases with K = 0.6 and 1.6. GP: ARD over the five features plus log K, fit on dataset train rows (K = 1) and the extra rows.",
+  "created": "2026-10-12T11:13:19"
+}
