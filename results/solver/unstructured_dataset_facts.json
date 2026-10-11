@@ -1,0 +1,22 @@
+{
+ "task": "S4",
+ "title": "Unstructured test dataset facts",
+ "command": "python -m ringsim.dataset_facts ",
+ "git": "a06c601",
+ "data": {
+  "dataset": "unstructured",
+  "n_runs": 40,
+  "splits": {
+   "test_unstructured": 40
+  }
+ },
+ "metrics": {
+  "n_planned": 40,
+  "n_ok": 40,
+  "n_stopped_early": 8,
+  "worst_volume_drift_pct": 0.8895047172851809
+ },
+ "figures": [],
+ "notes": "From index.csv via common.data.list_runs.",
+ "created": "2026-10-12T06:41:34.244635+00:00"
+}

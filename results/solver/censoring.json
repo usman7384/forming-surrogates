@@ -1,0 +1,110 @@
+{
+ "task": "S8",
+ "title": "Right-censoring of the dataset by fold-over stops",
+ "command": "python -m ringsim.dataset_facts ",
+ "git": "a06c601",
+ "data": {
+  "dataset": "full",
+  "n_runs": 460,
+  "splits": {
+   "train": 360,
+   "test_random": 40,
+   "test_ood_geometry": 40,
+   "test_fine_mesh": 20
+  }
+ },
+ "metrics": {
+  "reductions": [
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.35
+  ],
+  "n_ok_runs": 460,
+  "n_stopped_before_35pct": 105,
+  "fraction_stopped_before_35pct": 0.22826086956521738,
+  "cells": [
+   {
+    "mf_lo": 0.0,
+    "mf_hi": 0.2,
+    "n_runs": 84,
+    "fraction_reached": {
+     "0.05": 1.0,
+     "0.10": 1.0,
+     "0.15": 1.0,
+     "0.20": 1.0,
+     "0.25": 1.0,
+     "0.30": 1.0,
+     "0.35": 1.0
+    },
+    "median_final_reduction": 0.35000000000000003
+   },
+   {
+    "mf_lo": 0.2,
+    "mf_hi": 0.4,
+    "n_runs": 93,
+    "fraction_reached": {
+     "0.05": 1.0,
+     "0.10": 1.0,
+     "0.15": 1.0,
+     "0.20": 1.0,
+     "0.25": 1.0,
+     "0.30": 1.0,
+     "0.35": 1.0
+    },
+    "median_final_reduction": 0.35000000000000003
+   },
+   {
+    "mf_lo": 0.4,
+    "mf_hi": 0.6,
+    "n_runs": 92,
+    "fraction_reached": {
+     "0.05": 1.0,
+     "0.10": 1.0,
+     "0.15": 1.0,
+     "0.20": 1.0,
+     "0.25": 0.9891304347826086,
+     "0.30": 0.9456521739130435,
+     "0.35": 0.8260869565217391
+    },
+    "median_final_reduction": 0.35
+   },
+   {
+    "mf_lo": 0.6,
+    "mf_hi": 0.8,
+    "n_runs": 99,
+    "fraction_reached": {
+     "0.05": 1.0,
+     "0.10": 1.0,
+     "0.15": 1.0,
+     "0.20": 0.9797979797979798,
+     "0.25": 0.898989898989899,
+     "0.30": 0.797979797979798,
+     "0.35": 0.5353535353535354
+    },
+    "median_final_reduction": 0.35
+   },
+   {
+    "mf_lo": 0.8,
+    "mf_hi": 1.0,
+    "n_runs": 92,
+    "fraction_reached": {
+     "0.05": 1.0,
+     "0.10": 1.0,
+     "0.15": 1.0,
+     "0.20": 0.9565217391304348,
+     "0.25": 0.7934782608695652,
+     "0.30": 0.6847826086956522,
+     "0.35": 0.532608695652174
+    },
+    "median_final_reduction": 0.35
+   }
+  ]
+ },
+ "figures": [],
+ "notes": "All splits pooled, ok runs only. fraction_reached = share of runs in the friction bin whose curve extends to that reduction.",
+ "created": "2026-10-12T06:41:34.244635+00:00"
+}

@@ -1,0 +1,18 @@
+{
+ "task": "S7",
+ "title": "ringsim vs published ring calibration points",
+ "command": "python -m ringsim.calibration_compare ",
+ "git": "a06c601",
+ "data": {
+  "dataset": "published_ring_calibration.yaml",
+  "n_runs": 0,
+  "splits": {}
+ },
+ "metrics": {
+  "status": "harness built, no verified source data supplied",
+  "rows": []
+ },
+ "figures": [],
+ "notes": "Verification is not validation. harness built, no verified source data supplied",
+ "created": "2026-10-12T06:41:40.117503+00:00"
+}

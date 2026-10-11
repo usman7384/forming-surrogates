@@ -1,0 +1,18 @@
+# Published ring-compression calibration points, to be compared with ringsim (harness: python -m ringsim.calibration_compare).
+#
+# STATUS: no verified source data supplied. `points` is intentionally empty. Do not add rows from memory:
+# every row needs a citable source, a figure/table number and a digitisation uncertainty.
+#
+# Row schema (all fields required unless noted):
+#   source:        full citation (authors, title, venue, year)
+#   figure:        figure or table number
+#   od_id:         outer/inner diameter ratio of the tested ring (6:3:2 -> 2.0)
+#   h_id:          height/inner diameter (6:3:2 -> 0.6667)
+#   mf:            Tresca friction factor the source associates with the curve
+#   reduction_pct: height reduction in percent at which the value was read
+#   id_change_pct: reported inner-diameter change in percent (negative = hole shrinks)
+#   uncertainty_pct: digitisation / reading uncertainty in percentage points
+#   rate_exponent_m: (optional) strain-rate sensitivity of the tested material if the source gives one;
+#                    omit for rigid-plastic (rate-independent) sources, in which case the comparison uses --m
+#   note:          (optional) caveats, e.g. rigid-plastic vs viscoplastic, Coulomb vs Tresca axes
+points: []

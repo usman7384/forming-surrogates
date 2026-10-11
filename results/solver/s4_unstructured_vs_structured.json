@@ -1,0 +1,45 @@
+{
+ "task": "S4",
+ "title": "Unstructured vs structured mesh, same 40 cases",
+ "command": "python -m ringsim.mesh_compare --unstructured $FS_DATA_ROOT/unstructured --twin $FS_DATA_ROOT/unstructured_twin --out results/solver --workers 4",
+ "git": "4b72e05",
+ "data": {
+  "dataset": "unstructured",
+  "n_runs": 40,
+  "splits": {
+   "test_unstructured": 40
+  }
+ },
+ "metrics": {
+  "reduction_0.1": {
+   "n_pairs": 40,
+   "id_diff_points_mean": -0.013035414407782598,
+   "id_diff_points_rms": 0.026139974937474456,
+   "id_diff_points_max_abs": 0.06636320756422398,
+   "force_diff_pct_mean": 0.13536166317403867,
+   "force_diff_pct_rms": 0.2505174662081764,
+   "force_diff_pct_max_abs": 0.7109977901357006
+  },
+  "reduction_0.2": {
+   "n_pairs": 39,
+   "id_diff_points_mean": -0.03700014081219308,
+   "id_diff_points_rms": 0.08514981172551256,
+   "id_diff_points_max_abs": 0.2785664861129522,
+   "force_diff_pct_mean": 0.4782123463418348,
+   "force_diff_pct_rms": 1.1937370338739308,
+   "force_diff_pct_max_abs": 3.73243198869938
+  },
+  "reduction_0.3": {
+   "n_pairs": 33,
+   "id_diff_points_mean": -0.07902183657116517,
+   "id_diff_points_rms": 0.20477884700071944,
+   "id_diff_points_max_abs": 0.6876724269073708,
+   "force_diff_pct_mean": 0.7849221333690142,
+   "force_diff_pct_rms": 2.4654146897928535,
+   "force_diff_pct_max_abs": 9.61827921445342
+  }
+ },
+ "figures": [],
+ "notes": "id_diff = unstructured minus structured, in percentage points of inner-diameter change; force_diff in % of the structured normalised force. Pairs where either run stopped before the reduction are skipped. Differences measure mesh sensitivity at nz=8, not error.",
+ "created": "2026-10-11T21:14:11.195068+00:00"
+}
