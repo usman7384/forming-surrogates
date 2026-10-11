@@ -1,0 +1,56 @@
+{
+  "case": {
+    "od_id": 1.997734426308363,
+    "h_id": 0.4525430034100262,
+    "mf": 0.8329375585306369,
+    "reduction": 0.35,
+    "m": 0.23382026221064373,
+    "K": 1.0,
+    "V": 1.0,
+    "n": 0.0,
+    "eps0": 0.01,
+    "friction": "tresca"
+  },
+  "numerics": {
+    "nz": 8,
+    "dh_frac": 0.01,
+    "save_every": 2,
+    "eps_reg": 0.001,
+    "delta_rel": 0.01,
+    "newton_tol": 1e-08,
+    "newton_max": 60,
+    "contact_tol": 1e-06,
+    "min_area_frac": 0.05
+  },
+  "qoi": {
+    "id_change_pct": -16.739244784264372,
+    "id_min_change_pct": -16.739244784264372,
+    "id_die_change_pct": -4.335202674393546,
+    "od_change_pct": 9.052916042779847,
+    "barreling": 0.054506295446070836,
+    "peak_force": 21.89015530035692,
+    "peak_force_norm": 1.93542859813964,
+    "max_strain": 1.7255994736027231,
+    "final_reduction": 0.24000000000000002,
+    "volume_drift_pct": -0.22763124634800344
+  },
+  "info": {
+    "solver_version": "0.1.0",
+    "runtime_s": 24.38,
+    "n_steps": 35,
+    "newton_iters_max": 33,
+    "newton_unconverged_solves": 0,
+    "newton_err_max": 9.981714796446404e-09,
+    "newton_iters_mean": 17.44,
+    "warnings": [
+      "stopped at step 24: element collapse (fold-over), remeshing needed"
+    ],
+    "stopped_early": true,
+    "n_nodes": 171,
+    "n_elements": 288,
+    "split": "train",
+    "run_id": "run_0005",
+    "git": "no-git",
+    "python": "3.13.16"
+  }
+}

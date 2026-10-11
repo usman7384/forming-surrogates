@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.log
+artifacts/gnn/**/checkpoints/
+artifacts/**/*.pt.tmp
+# the full dataset lives outside the repo in $FS_DATA_ROOT; never commit it
+forming-data/
+.claude/
+artifacts/gnn/**/last.pt

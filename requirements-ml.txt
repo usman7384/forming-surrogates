@@ -1,0 +1,12 @@
+# Phase 2
+scikit-learn>=1.4
+torch>=2.2
+gpytorch>=1.11
+botorch>=0.10
+# Phase 3 (CPU wheels are fine)
+torch-geometric>=2.5
+# Phase 4
+asyncua>=1.1
+onnx>=1.15
+onnxruntime>=1.17
+streamlit>=1.32

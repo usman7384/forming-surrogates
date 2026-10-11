@@ -1,0 +1,54 @@
+{
+  "case": {
+    "od_id": 2.2690430650142837,
+    "h_id": 0.6838127971741679,
+    "mf": 0.4959026476063805,
+    "reduction": 0.35,
+    "m": 0.17458680911178676,
+    "K": 1.0,
+    "V": 1.0,
+    "n": 0.0,
+    "eps0": 0.01,
+    "friction": "tresca"
+  },
+  "numerics": {
+    "nz": 8,
+    "dh_frac": 0.01,
+    "save_every": 2,
+    "eps_reg": 0.001,
+    "delta_rel": 0.01,
+    "newton_tol": 1e-08,
+    "newton_max": 60,
+    "contact_tol": 1e-06,
+    "min_area_frac": 0.05
+  },
+  "qoi": {
+    "id_change_pct": -23.25359568579427,
+    "id_min_change_pct": -23.25359568579427,
+    "id_die_change_pct": -7.875307188665381,
+    "od_change_pct": 17.806552580914797,
+    "barreling": 0.036213461872372676,
+    "peak_force": 31.157193098308593,
+    "peak_force_norm": 2.2371426003387764,
+    "max_strain": 1.332130616951062,
+    "final_reduction": 0.35,
+    "volume_drift_pct": -0.18382046473355426
+  },
+  "info": {
+    "solver_version": "0.1.0",
+    "runtime_s": 16.11,
+    "n_steps": 35,
+    "newton_iters_max": 19,
+    "newton_unconverged_solves": 0,
+    "newton_err_max": 9.92044916481616e-09,
+    "newton_iters_mean": 9.11111111111111,
+    "warnings": [],
+    "stopped_early": false,
+    "n_nodes": 144,
+    "n_elements": 240,
+    "split": "train",
+    "run_id": "run_0000",
+    "git": "no-git",
+    "python": "3.13.16"
+  }
+}
