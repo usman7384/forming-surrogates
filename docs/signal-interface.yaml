@@ -1,0 +1,141 @@
+# Signal interface specification for the simulated press line ("Press1").
+# Written BEFORE any plant code (task P1). The press simulator, the OPC-UA server, the edge service and the
+# tests are all driven by this file: tests/test_plant_spec.py fails if the server publishes a tag that is not
+# listed here, or if a tag listed here is missing.
+#
+# Honesty: everything below describes a SIMULATED press. Nothing was measured on a real machine, and the
+# transport is OPC-UA over localhost. MQTT is "designed, not built".
+
+interface:
+  name: press1-signal-interface
+  version: 1
+  namespace_uri: "urn:forming-surrogates:press"
+  endpoint_default: "opc.tcp://127.0.0.1:4840/forming-surrogates/"
+  transport: opcua              # mqtt: designed, not built
+  time_base: >
+    All timestamps inside chunks are seconds on the simulated line clock (float64, 0 = start of shift).
+    The OPC-UA SourceTimestamp of a node is the wall-clock time at which the server wrote the value; it is
+    used only for the latency measurement, never for alignment.
+
+process_assumptions:            # plant-scale numbers the simulator uses to turn dimensionless runs into SI units
+  inner_diameter_mm: 30.0       # ring inner diameter; solver lengths are in units of the inner radius
+  flow_stress_K_nominal_MPa_s_m: 100.0   # consistency K of the nominal material (force scales with K)
+  die_speed_mm_s: 5.0           # forming speed V
+  approach_distance_mm: 2.0     # the die travels this far above the part before contact
+  nominal_reduction: 0.25       # intended height reduction per stroke
+  assumed_cycle_time_s: 6.0     # ASSUMPTION (stated, not measured): time between two strokes
+  verdict_deadline_s: 6.0       # the verdict must exist before the next part starts
+
+chunk_format:                   # how a high-rate signal is carried in one OPC-UA node
+  node_data_type: Double[]
+  layout: "[part_id, chunk_seq, t0, v0, q0, t1, v1, q1, ...]"
+  why: >
+    A 1 kHz signal published as one scalar node per sample would need one notification per sample.
+    A PLC typically hands out blocks; one array write is also atomic, so a client never sees
+    timestamps from one write and values from another.
+  chunk_duration_s: 0.1
+  quality_codes: {0: good, 1: uncertain (stale or interpolated by the PLC), 2: bad (value not usable)}
+
+signals:
+  - name: stroke_position
+    node_id: "ns=2;s=Press1.Stroke.Position"
+    description: >
+      Die position from the position transducer, measured from the home position (0), increasing downwards.
+      The part surface is at process_assumptions.approach_distance_mm; where contact happens is NOT given by this
+      signal and must be found from the force.
+    data_type: "Double[] (chunk)"
+    unit: mm
+    sampling_rate_hz: 250
+    timing: {jitter_sd_ms: 0.4, drop_probability: 0.02}
+    timestamp_source: PLC acquisition clock (per sample)
+    quality_flag: per-sample code in the chunk
+    role: input to the reduction estimate
+
+  - name: stroke_force
+    node_id: "ns=2;s=Press1.Stroke.Force"
+    description: Force on one die from the load cell.
+    data_type: "Double[] (chunk)"
+    unit: kN
+    sampling_rate_hz: 1000
+    timing: {jitter_sd_ms: 0.15, drop_probability: 0.01}
+    noise: {sd_kN: 0.5}
+    drift: "additive offset in kN that creeps from a chosen part onwards (scenario 'drift')"
+    timestamp_source: load-cell amplifier clock (per sample); its offset to the position clock is not calibrated
+    quality_flag: per-sample code in the chunk
+    role: input to contact detection and to drift monitoring
+
+  - name: die_temperature
+    node_id: "ns=2;s=Press1.Die.Temperature"
+    description: >
+      NUISANCE CHANNEL. A thermocouple in the die. The solver is isothermal, so this signal has NO physical
+      effect on the part in this simulation; it is a random walk. It exists to test that the edge service ignores it.
+    data_type: "Double[] (chunk)"
+    unit: degC
+    sampling_rate_hz: 10
+    timing: {jitter_sd_ms: 5.0, drop_probability: 0.0}
+    timestamp_source: thermocouple module clock
+    quality_flag: per-sample code in the chunk
+    role: logged only, not used by the model
+
+  - name: stroke_state
+    node_id: "ns=2;s=Press1.Stroke.State"
+    description: "Press state machine: 0 idle, 1 approach, 2 forming, 3 hold, 4 retract."
+    data_type: Int32
+    unit: enum
+    sampling_rate_hz: event
+    timestamp_source: PLC (on change)
+    quality_flag: OPC-UA StatusCode of the node
+    role: informational
+
+  - name: part_ticket
+    node_id: "ns=2;s=Press1.Part.Ticket"
+    description: >
+      JSON string written once per part before the stroke (what an MES / work order would supply):
+      part_id, lot_id, od_id, h_id, m (nominal rate sensitivity), inner_diameter_mm, nominal_reduction,
+      target_id_change_pct, tol_id_pct.
+    data_type: String
+    unit: json
+    sampling_rate_hz: event (once per part)
+    timestamp_source: MES / server write time
+    quality_flag: OPC-UA StatusCode of the node
+    role: ring geometry and spec for the part
+
+  - name: stroke_end
+    node_id: "ns=2;s=Press1.Stroke.End"
+    description: >
+      JSON string written when the stroke is finished: part_id, n_chunks per signal, t_end_s (line clock),
+      emit_wall_ns (server wall clock, nanoseconds), labels_published (how many lab_measurement values the server had
+      written before this stroke end; the edge waits for that many before processing the part, because OPC-UA may
+      deliver one tag's changes after another's). THIS EVENT STARTS THE LATENCY CLOCK.
+    data_type: String
+    unit: json
+    sampling_rate_hz: event (once per part)
+    timestamp_source: PLC on end of retract
+    quality_flag: OPC-UA StatusCode of the node
+    role: tells the edge service that the stroke buffer is complete
+
+  - name: lab_measurement
+    node_id: "ns=2;s=Lab.Measurement.InnerDiameter"
+    description: >
+      DELAYED LABEL. JSON string: part_id, id_change_pct (measured inner-diameter change), sigma_pct
+      (gauge uncertainty), reduction (achieved height reduction from the lab's height gauge, so the friction
+      update does not depend on the press signals that may be drifting). Arrives some parts after the stroke and only for one part in k.
+    data_type: String
+    unit: json
+    sampling_rate_hz: event (sampled parts only, delayed)
+    timestamp_source: measurement station
+    quality_flag: OPC-UA StatusCode of the node
+    role: updates the friction posterior; used for residuals and the acceptance metric
+
+  - name: edge_ready
+    node_id: "ns=2;s=Press1.Control.EdgeReady"
+    description: >
+      Handshake, writable by the client. The edge service sets it to true once its subscriptions are in place;
+      the simulated press waits for it before the first stroke so no samples are lost at start-up.
+      A real PLC would not wait; this exists only because the press is simulated.
+    data_type: Boolean
+    unit: bool
+    sampling_rate_hz: event
+    timestamp_source: client write time
+    quality_flag: OPC-UA StatusCode of the node
+    role: simulation control only
