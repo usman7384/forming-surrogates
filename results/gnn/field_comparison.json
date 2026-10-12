@@ -1,0 +1,63 @@
+{
+ "task": "N6c",
+ "title": "field comparison figure: selected runs and errors",
+ "command": "python -m surrogates.gnn.field_figure --data full --out results/gnn",
+ "git": "a9a34fd",
+ "data": {
+  "dataset": "full",
+  "n_runs": 3
+ },
+ "metrics": {
+  "rows": {
+   "test_random": {
+    "run_id": "run_0159",
+    "gnn_variant": "jloss",
+    "s": 1.0,
+    "gnn_run_error": 0.033881597220897675,
+    "pod_gp_run_error": 0.011746630072593689,
+    "split_median_gnn_run_error": 0.03289582207798958,
+    "n_runs_in_split": 40,
+    "case": {
+     "od_id": 2.2589476639389967,
+     "h_id": 0.8433034368881589,
+     "mf": 0.6544436666530696,
+     "m": 0.18827720805602527
+    }
+   },
+   "test_ood_geometry": {
+    "run_id": "run_0419",
+    "gnn_variant": "jloss",
+    "s": 1.0,
+    "gnn_run_error": 0.05838342010974884,
+    "pod_gp_run_error": 0.21336261928081512,
+    "split_median_gnn_run_error": 0.056253278627991676,
+    "n_runs_in_split": 40,
+    "case": {
+     "od_id": 1.9369510513831643,
+     "h_id": 1.1813234845190597,
+     "mf": 0.6331599460365578,
+     "m": 0.14510606747163307
+    }
+   },
+   "test_fine_mesh": {
+    "run_id": "run_0456",
+    "gnn_variant": "mixmesh",
+    "s": 0.9428571462631226,
+    "gnn_run_error": 0.08501829206943512,
+    "pod_gp_run_error": 0.014031088910996914,
+    "split_median_gnn_run_error": 0.08403259888291359,
+    "n_runs_in_split": 20,
+    "case": {
+     "od_id": 2.0286681107234754,
+     "h_id": 0.6981696509633293,
+     "mf": 0.7110589495467674,
+     "m": 0.22262789616524659
+    }
+   }
+  },
+  "figure": "results/gnn/figures/field_comparison.png"
+ },
+ "figures": [],
+ "notes": "GNNs from committed best.pt; POD+GP refitted with the fixed seed. Errors are per-run displacement RMSE over all saved steps divided by that run's displacement std.",
+ "created": "2026-10-12T14:58:48"
+}

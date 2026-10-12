@@ -1,0 +1,16 @@
+# jloss (+ idloss: set lambda_id below to what the idloss run supports) with the 66 finer-mesh (nz=12) training runs
+# mixed into the training set. Tests whether the fine-mesh failure is a mesh-density distribution shift.
+name: mixmesh
+seed: 0
+latent: 64
+steps: 12
+lr: 0.001
+epochs: 30
+batch_size: 16
+val_frac: 0.15
+lambda_j: 1.0
+lambda_id: 0.0
+id_scale: 5.0
+extra_train: fine_train
+extra_val_frac: 0.15
+threads: 3

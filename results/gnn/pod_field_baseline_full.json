@@ -1,0 +1,176 @@
+{
+ "task": "N5b",
+ "title": "POD + GP field baseline",
+ "command": "python -m surrogates.baselines.pod_field --data full --out results/gnn",
+ "git": "a06c601",
+ "data": {
+  "dataset": "full",
+  "n_runs": 360
+ },
+ "metrics": {
+  "n_train_runs": 360,
+  "n_modes": 24,
+  "pod_energy_captured": 0.9997064392415668,
+  "gp_rows": 2500,
+  "gp_kernel": "3.13**2 * Matern(length_scale=[1.67, 1.39, 1.11, 4.09, 2.78], nu=2.5) + WhiteKernel(noise_level=0.00154)",
+  "test_random": {
+   "gp_pod": {
+    "nrmse_dr": 0.0194557998329401,
+    "nrmse_dz": 0.018663709983229637,
+    "nrmse_strain": 0.05572451651096344,
+    "id_rmse_pct_points": 0.21698846989074091,
+    "id_n_rows": 115,
+    "mean_abs_J_minus_1_pred": 0.018965449184179306,
+    "mean_abs_J_minus_1_solver": 0.018763408064842224,
+    "n_runs": 40,
+    "early_stopped_runs": {
+     "nrmse_dr": 0.01785660907626152,
+     "nrmse_dz": 0.025129133835434914,
+     "nrmse_strain": 0.06436464190483093,
+     "id_rmse_pct_points": 0.12096455298757079,
+     "id_n_rows": 31,
+     "mean_abs_J_minus_1_pred": 0.022386619821190834,
+     "mean_abs_J_minus_1_solver": 0.02306577004492283,
+     "n_runs": 12
+    },
+    "completed_runs": {
+     "nrmse_dr": 0.020715288817882538,
+     "nrmse_dz": 0.017761528491973877,
+     "nrmse_strain": 0.05055271461606026,
+     "id_rmse_pct_points": 0.24302298617697435,
+     "id_n_rows": 84,
+     "mean_abs_J_minus_1_pred": 0.01749923638999462,
+     "mean_abs_J_minus_1_solver": 0.016919536516070366,
+     "n_runs": 28
+    }
+   },
+   "resampling_floor": {
+    "nrmse_dr": 0.00993941631168127,
+    "nrmse_dz": 0.013868313282728195,
+    "nrmse_strain": 0.04531140625476837,
+    "id_rmse_pct_points": 0.0,
+    "id_n_rows": 115,
+    "mean_abs_J_minus_1_pred": 0.01838073506951332,
+    "mean_abs_J_minus_1_solver": 0.018763408064842224,
+    "n_runs": 40
+   },
+   "pod_truncation_floor": {
+    "nrmse_dr": 0.01280058640986681,
+    "nrmse_dz": 0.01606745645403862,
+    "nrmse_strain": 0.049788616597652435,
+    "id_rmse_pct_points": 0.1398935897875166,
+    "id_n_rows": 115,
+    "mean_abs_J_minus_1_pred": 0.018800944089889526,
+    "mean_abs_J_minus_1_solver": 0.018763408064842224,
+    "n_runs": 40
+   }
+  },
+  "test_ood_geometry": {
+   "gp_pod": {
+    "nrmse_dr": 0.21357955038547516,
+    "nrmse_dz": 0.25178584456443787,
+    "nrmse_strain": 0.24539294838905334,
+    "id_rmse_pct_points": 3.5112245673025675,
+    "id_n_rows": 112,
+    "mean_abs_J_minus_1_pred": 0.015072295442223549,
+    "mean_abs_J_minus_1_solver": 0.015842005610466003,
+    "n_runs": 40,
+    "early_stopped_runs": {
+     "nrmse_dr": 0.2720668613910675,
+     "nrmse_dz": 0.28899693489074707,
+     "nrmse_strain": 0.30848607420921326,
+     "id_rmse_pct_points": 4.667534008511155,
+     "id_n_rows": 19,
+     "mean_abs_J_minus_1_pred": 0.015118496492505074,
+     "mean_abs_J_minus_1_solver": 0.016812995076179504,
+     "n_runs": 9
+    },
+    "completed_runs": {
+     "nrmse_dr": 0.20135007798671722,
+     "nrmse_dz": 0.2560815215110779,
+     "nrmse_strain": 0.22244419157505035,
+     "id_rmse_pct_points": 3.2243738594563123,
+     "id_n_rows": 93,
+     "mean_abs_J_minus_1_pred": 0.015058879740536213,
+     "mean_abs_J_minus_1_solver": 0.015560104511678219,
+     "n_runs": 31
+    }
+   },
+   "resampling_floor": {
+    "nrmse_dr": 0.009286059066653252,
+    "nrmse_dz": 0.012293728068470955,
+    "nrmse_strain": 0.0427081324160099,
+    "id_rmse_pct_points": 0.0,
+    "id_n_rows": 112,
+    "mean_abs_J_minus_1_pred": 0.015613247640430927,
+    "mean_abs_J_minus_1_solver": 0.015842005610466003,
+    "n_runs": 40
+   },
+   "pod_truncation_floor": {
+    "nrmse_dr": 0.018708080053329468,
+    "nrmse_dz": 0.019158927723765373,
+    "nrmse_strain": 0.053443774580955505,
+    "id_rmse_pct_points": 0.35671403514282024,
+    "id_n_rows": 112,
+    "mean_abs_J_minus_1_pred": 0.016950655728578568,
+    "mean_abs_J_minus_1_solver": 0.015842005610466003,
+    "n_runs": 40
+   }
+  },
+  "test_fine_mesh": {
+   "gp_pod": {
+    "nrmse_dr": 0.020154792815446854,
+    "nrmse_dz": 0.021201660856604576,
+    "nrmse_strain": 0.14664126932621002,
+    "id_rmse_pct_points": 0.2829360907894828,
+    "id_n_rows": 53,
+    "mean_abs_J_minus_1_pred": 0.016305211931467056,
+    "mean_abs_J_minus_1_solver": 0.014361508190631866,
+    "n_runs": 20,
+    "early_stopped_runs": {
+     "nrmse_dr": 0.021949414163827896,
+     "nrmse_dz": 0.025064660236239433,
+     "nrmse_strain": 0.16706643998622894,
+     "id_rmse_pct_points": 0.11732730729678228,
+     "id_n_rows": 23,
+     "mean_abs_J_minus_1_pred": 0.015582481399178505,
+     "mean_abs_J_minus_1_solver": 0.014443179592490196,
+     "n_runs": 10
+    },
+    "completed_runs": {
+     "nrmse_dr": 0.01968211866915226,
+     "nrmse_dz": 0.020004985854029655,
+     "nrmse_strain": 0.12758316099643707,
+     "id_rmse_pct_points": 0.36176369064683706,
+     "id_n_rows": 30,
+     "mean_abs_J_minus_1_pred": 0.017027948051691055,
+     "mean_abs_J_minus_1_solver": 0.014279833063483238,
+     "n_runs": 10
+    }
+   },
+   "resampling_floor": {
+    "nrmse_dr": 0.0054252734407782555,
+    "nrmse_dz": 0.004987272433936596,
+    "nrmse_strain": 0.03153533861041069,
+    "id_rmse_pct_points": 0.0,
+    "id_n_rows": 53,
+    "mean_abs_J_minus_1_pred": 0.014096779748797417,
+    "mean_abs_J_minus_1_solver": 0.014361508190631866,
+    "n_runs": 20
+   },
+   "pod_truncation_floor": {
+    "nrmse_dr": 0.0195828378200531,
+    "nrmse_dz": 0.02201041206717491,
+    "nrmse_strain": 0.09707029908895493,
+    "id_rmse_pct_points": 0.22662673493325952,
+    "id_n_rows": 53,
+    "mean_abs_J_minus_1_pred": 0.01952938735485077,
+    "mean_abs_J_minus_1_solver": 0.014361508190631866,
+    "n_runs": 20
+   }
+  }
+ },
+ "figures": [],
+ "notes": "Fields resampled to a fixed 21x13 grid in initial normalised (xi, eta), POD per standardised channel, GP (ARD Matern 5/2 + white noise) on a random subsample of training rows. 'resampling_floor' and 'pod_truncation_floor' push the TRUE fields through parts of the pipeline and show what error is unavoidable. Force is not modelled. Same nRMSE definition and ID rows as the GNN evaluation.",
+ "created": "2026-10-12T08:53:57"
+}

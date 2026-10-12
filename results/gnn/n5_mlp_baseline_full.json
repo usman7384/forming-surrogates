@@ -1,0 +1,85 @@
+{
+ "task": "N5",
+ "title": "MLP ensemble scalar baseline",
+ "command": "python -m surrogates.baselines.mlp_scalar --data full --out results/gnn --threads 4",
+ "git": "89c4c97",
+ "data": {
+  "dataset": "full",
+  "n_rows_train": 1040,
+  "splits": {
+   "test_random": 40,
+   "test_ood_geometry": 40,
+   "test_fine_mesh": 20
+  }
+ },
+ "metrics": {
+  "by_split": {
+   "train": {
+    "id_change_pct": {
+     "rmse": 0.079593048963452,
+     "coverage95": 0.8413461538461539,
+     "mean_std": 0.061185801943041636,
+     "n_rows": 1040
+    },
+    "log_force_norm": {
+     "rmse": 0.006873130449723287,
+     "coverage95": 0.8576923076923076,
+     "mean_std": 0.0020207122287216467,
+     "n_rows": 1040
+    }
+   },
+   "test_random": {
+    "id_change_pct": {
+     "rmse": 0.10380644391718159,
+     "coverage95": 0.8782608695652174,
+     "mean_std": 0.0910029988443773,
+     "n_rows": 115
+    },
+    "log_force_norm": {
+     "rmse": 0.02118359826526392,
+     "coverage95": 0.7478260869565218,
+     "mean_std": 0.003635964742607063,
+     "n_rows": 115
+    }
+   },
+   "test_ood_geometry": {
+    "id_change_pct": {
+     "rmse": 0.7069727525083533,
+     "coverage95": 0.9107142857142857,
+     "mean_std": 0.3816171257432631,
+     "n_rows": 112
+    },
+    "log_force_norm": {
+     "rmse": 0.01939791422945956,
+     "coverage95": 0.8839285714285714,
+     "mean_std": 0.01093333084969186,
+     "n_rows": 112
+    }
+   },
+   "test_fine_mesh": {
+    "id_change_pct": {
+     "rmse": 0.1202844413896279,
+     "coverage95": 0.7735849056603774,
+     "mean_std": 0.1020610507659954,
+     "n_rows": 53
+    },
+    "log_force_norm": {
+     "rmse": 0.031038643478641305,
+     "coverage95": 0.6415094339622641,
+     "mean_std": 0.004574968622678412,
+     "n_rows": 53
+    }
+   }
+  },
+  "reductions": [
+   0.1,
+   0.2,
+   0.3
+  ],
+  "members": 5,
+  "epochs": 1500
+ },
+ "figures": [],
+ "notes": "Targets: id_change_pct and log(force_norm) at fixed reductions via scalar_table. Std = ensemble spread; coverage reported as measured (not calibrated). On smoke data the test splits hold 1-2 runs, so these numbers only prove the pipeline.",
+ "created": "2026-10-12T01:55:36"
+}

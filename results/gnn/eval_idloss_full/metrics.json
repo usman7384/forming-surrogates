@@ -1,0 +1,300 @@
+{
+ "task": "N6",
+ "title": "GNN evaluation (idloss)",
+ "command": "python -m surrogates.gnn.evaluate --run artifacts/gnn/idloss --data full --out results/gnn/eval_idloss_full",
+ "git": "a9a34fd",
+ "data": {
+  "dataset": "full",
+  "n_runs": 100,
+  "splits": {
+   "test_random": 40,
+   "test_ood_geometry": 40,
+   "test_fine_mesh": 20
+  }
+ },
+ "metrics": {
+  "test_random": {
+   "nrmse_dr": 0.06810633838176727,
+   "nrmse_dz": 0.04574843868613243,
+   "nrmse_strain": 0.11124759167432785,
+   "force_rmse": 0.0327448770403862,
+   "force_mean_rel_err": 0.011499340645968914,
+   "id_rmse_pct_points": 1.5166157302981682,
+   "id_n_rows": 115,
+   "mean_abs_J_minus_1_pred": 0.031006377190351486,
+   "mean_abs_J_minus_1_solver": 0.018763408064842224,
+   "n_runs": 40,
+   "early_stopped_runs": {
+    "nrmse_dr": 0.09749408811330795,
+    "nrmse_dz": 0.06658482551574707,
+    "nrmse_strain": 0.15031735599040985,
+    "force_rmse": 0.033541079610586166,
+    "force_mean_rel_err": 0.013526852242648602,
+    "id_rmse_pct_points": 1.7457726072848545,
+    "id_n_rows": 31,
+    "mean_abs_J_minus_1_pred": 0.03448367491364479,
+    "mean_abs_J_minus_1_solver": 0.02306577004492283,
+    "n_runs": 12
+   },
+   "completed_runs": {
+    "nrmse_dr": 0.05776607245206833,
+    "nrmse_dz": 0.04203474149107933,
+    "nrmse_strain": 0.08266866952180862,
+    "force_rmse": 0.03245272859930992,
+    "force_mean_rel_err": 0.010767605155706406,
+    "id_rmse_pct_points": 1.4227521726137127,
+    "id_n_rows": 84,
+    "mean_abs_J_minus_1_pred": 0.029516106471419334,
+    "mean_abs_J_minus_1_solver": 0.016919536516070366,
+    "n_runs": 28
+   },
+   "id_rmse_pct_points_mlp_baseline": 0.10380644391718159
+  },
+  "test_ood_geometry": {
+   "nrmse_dr": 0.17296841740608215,
+   "nrmse_dz": 0.09819930791854858,
+   "nrmse_strain": 0.21478158235549927,
+   "force_rmse": 0.03320378065109253,
+   "force_mean_rel_err": 0.011582980863749981,
+   "id_rmse_pct_points": 3.9123358792431993,
+   "id_n_rows": 112,
+   "mean_abs_J_minus_1_pred": 0.0316968634724617,
+   "mean_abs_J_minus_1_solver": 0.015842005610466003,
+   "n_runs": 40,
+   "early_stopped_runs": {
+    "nrmse_dr": 0.2652992904186249,
+    "nrmse_dz": 0.11646932363510132,
+    "nrmse_strain": 0.30284643173217773,
+    "force_rmse": 0.02812507003545761,
+    "force_mean_rel_err": 0.009048756211996078,
+    "id_rmse_pct_points": 7.268234441824773,
+    "id_n_rows": 19,
+    "mean_abs_J_minus_1_pred": 0.028183646500110626,
+    "mean_abs_J_minus_1_solver": 0.016812995076179504,
+    "n_runs": 9
+   },
+   "completed_runs": {
+    "nrmse_dr": 0.14143536984920502,
+    "nrmse_dz": 0.09938482940196991,
+    "nrmse_strain": 0.177542582154274,
+    "force_rmse": 0.03417695313692093,
+    "force_mean_rel_err": 0.012116500176489353,
+    "id_rmse_pct_points": 2.7642033238714814,
+    "id_n_rows": 93,
+    "mean_abs_J_minus_1_pred": 0.03271682932972908,
+    "mean_abs_J_minus_1_solver": 0.015560104511678219,
+    "n_runs": 31
+   },
+   "id_rmse_pct_points_mlp_baseline": 0.7069727525083533
+  },
+  "test_fine_mesh": {
+   "nrmse_dr": 0.38848501443862915,
+   "nrmse_dz": 0.23126009106636047,
+   "nrmse_strain": 0.5292450189590454,
+   "force_rmse": 0.07128404080867767,
+   "force_mean_rel_err": 0.03665180504322052,
+   "id_rmse_pct_points": 5.7362078329956265,
+   "id_n_rows": 53,
+   "mean_abs_J_minus_1_pred": 0.0474831759929657,
+   "mean_abs_J_minus_1_solver": 0.014361508190631866,
+   "n_runs": 20,
+   "early_stopped_runs": {
+    "nrmse_dr": 0.2919152081012726,
+    "nrmse_dz": 0.1960919052362442,
+    "nrmse_strain": 0.4573400020599365,
+    "force_rmse": 0.08203659951686859,
+    "force_mean_rel_err": 0.04328099638223648,
+    "id_rmse_pct_points": 2.2622171400964968,
+    "id_n_rows": 23,
+    "mean_abs_J_minus_1_pred": 0.04433395713567734,
+    "mean_abs_J_minus_1_solver": 0.014443179592490196,
+    "n_runs": 10
+   },
+   "completed_runs": {
+    "nrmse_dr": 0.4640877842903137,
+    "nrmse_dz": 0.2601628005504608,
+    "nrmse_strain": 0.5957150459289551,
+    "force_rmse": 0.06162182614207268,
+    "force_mean_rel_err": 0.03148801252245903,
+    "id_rmse_pct_points": 7.362542244655746,
+    "id_n_rows": 30,
+    "mean_abs_J_minus_1_pred": 0.05063239485025406,
+    "mean_abs_J_minus_1_solver": 0.014279833063483238,
+    "n_runs": 10
+   },
+   "id_rmse_pct_points_mlp_baseline": 0.1202844413896279
+  },
+  "inference": {
+   "ms_per_sample_batched_run": 11.1627499717878,
+   "mean_solver_runtime_s_per_run": 63.51619999999999,
+   "note": "one GNN sample = one stroke position; a solver run covers the whole stroke on one CPU (teaching-scale solver, not an industrial one)"
+  },
+  "failure_gallery": [
+   {
+    "rank": 1,
+    "run_id": "run_0450",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 2.2079861164093018,
+    "case": {
+     "od_id": 1.6550742643817415,
+     "h_id": 0.8375698467018271,
+     "mf": 0.9019271208250081,
+     "m": 0.16769043618369261
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_00_run_0450_s100.png",
+    "hypothesis (untested)": "near-sticking friction (m_f 0.90) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; late stroke (s=1.00): largest displacements, so absolute error is largest; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 2,
+    "run_id": "run_0453",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 2.075928211212158,
+    "case": {
+     "od_id": 1.752275448958714,
+     "h_id": 0.7820940274065218,
+     "mf": 0.9958166009219371,
+     "m": 0.11526988491131142
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_01_run_0453_s100.png",
+    "hypothesis (untested)": "near-sticking friction (m_f 1.00) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; late stroke (s=1.00): largest displacements, so absolute error is largest; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 3,
+    "run_id": "run_0443",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 1.882829189300537,
+    "case": {
+     "od_id": 1.632112397146116,
+     "h_id": 0.7613097743466082,
+     "mf": 0.6453380542614982,
+     "m": 0.17246283490524977
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_02_run_0443_s100.png",
+    "hypothesis (untested)": "late stroke (s=1.00): largest displacements, so absolute error is largest; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 4,
+    "run_id": "run_0459",
+    "split": "test_fine_mesh",
+    "s": 0.9428571462631226,
+    "score": 1.633061408996582,
+    "case": {
+     "od_id": 2.0595772296891,
+     "h_id": 0.7878861228232246,
+     "mf": 0.7564023294737191,
+     "m": 0.06875293762288259
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_03_run_0459_s94.png",
+    "hypothesis (untested)": "run stopped early by fold-over: the last saved steps contain severely distorted triangles; late stroke (s=0.94): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 5,
+    "run_id": "run_0458",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 1.6050302982330322,
+    "case": {
+     "od_id": 2.0450603522514537,
+     "h_id": 0.8165111748878089,
+     "mf": 0.9881642428061278,
+     "m": 0.21634678557440112
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_04_run_0458_s100.png",
+    "hypothesis (untested)": "near-sticking friction (m_f 0.99) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; late stroke (s=1.00): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 6,
+    "run_id": "run_0454",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 1.5356305837631226,
+    "case": {
+     "od_id": 1.7045825954771352,
+     "h_id": 0.8450242310849992,
+     "mf": 0.4727753368409083,
+     "m": 0.2854589324570396
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_05_run_0454_s100.png",
+    "hypothesis (untested)": "late stroke (s=1.00): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 7,
+    "run_id": "run_0442",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 1.5327575206756592,
+    "case": {
+     "od_id": 1.710141791558406,
+     "h_id": 0.5889008762549139,
+     "mf": 0.932896706800969,
+     "m": 0.10808331874452057
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_06_run_0442_s100.png",
+    "hypothesis (untested)": "near-sticking friction (m_f 0.93) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; late stroke (s=1.00): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 8,
+    "run_id": "run_0444",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 1.5290677547454834,
+    "case": {
+     "od_id": 1.6799871822346715,
+     "h_id": 0.9103410261981619,
+     "mf": 0.4775543357153996,
+     "m": 0.1902563312322994
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_07_run_0444_s100.png",
+    "hypothesis (untested)": "late stroke (s=1.00): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 9,
+    "run_id": "run_0416",
+    "split": "test_ood_geometry",
+    "s": 0.5142857432365417,
+    "score": 1.3705443143844604,
+    "case": {
+     "od_id": 2.732509933865784,
+     "h_id": 0.5473313603459066,
+     "mf": 0.7685169988962544,
+     "m": 0.10291868565187763
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_08_run_0416_s51.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.73, H/ID 0.55) lies outside the training box; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 10,
+    "run_id": "run_0412",
+    "split": "test_ood_geometry",
+    "s": 0.6571428775787354,
+    "score": 1.3111598491668701,
+    "case": {
+     "od_id": 2.7342276866001094,
+     "h_id": 0.4042550971618998,
+     "mf": 0.6457208955749478,
+     "m": 0.22997734587717328
+    },
+    "figure": "results/gnn/eval_idloss_full/figures/gallery_09_run_0412_s65.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.73, H/ID 0.40) lies outside the training box; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   }
+  ]
+ },
+ "figures": [
+  "results/gnn/eval_idloss_full/figures/gallery_00_run_0450_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_01_run_0453_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_02_run_0443_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_03_run_0459_s94.png",
+  "results/gnn/eval_idloss_full/figures/gallery_04_run_0458_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_05_run_0454_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_06_run_0442_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_07_run_0444_s100.png",
+  "results/gnn/eval_idloss_full/figures/gallery_08_run_0416_s51.png",
+  "results/gnn/eval_idloss_full/figures/gallery_09_run_0412_s65.png",
+  "results/gnn/eval_idloss_full/figures/training_curves.png"
+ ],
+ "notes": "checkpoint best.pt of artifacts/gnn/idloss; lambda_j=1.0; nRMSE = RMSE / std of the solver truth over the split. Gallery hypotheses are rule-derived guesses to be tested.",
+ "created": "2026-10-12T14:54:24"
+}

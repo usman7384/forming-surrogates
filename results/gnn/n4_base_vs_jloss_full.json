@@ -1,0 +1,461 @@
+{
+ "task": "N4",
+ "title": "base (lambda_j=0) vs jloss (lambda_j=1), 30 epochs each",
+ "command": "python -m surrogates.gnn.compare",
+ "git": "89c4c97",
+ "data": {
+  "dataset": "full"
+ },
+ "metrics": {
+  "rows": {
+   "test_random/all/nrmse_dr": {
+    "base": 0.060974981635808945,
+    "jloss": 0.0532461553812027,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -12.675405629097096,
+    "n_runs": 40
+   },
+   "test_random/all/nrmse_dz": {
+    "base": 0.03000372275710106,
+    "jloss": 0.03490275889635086,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 16.328094279868434,
+    "n_runs": 40
+   },
+   "test_random/all/nrmse_strain": {
+    "base": 0.09628521651029587,
+    "jloss": 0.08828677982091904,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -8.307024670315355,
+    "n_runs": 40
+   },
+   "test_random/all/force_rmse": {
+    "base": 0.03414511680603027,
+    "jloss": 0.03586229681968689,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 5.029064692944175,
+    "n_runs": 40
+   },
+   "test_random/all/force_mean_rel_err": {
+    "base": 0.009423725306987762,
+    "jloss": 0.009475946426391602,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 0.554145178288641,
+    "n_runs": 40
+   },
+   "test_random/all/id_rmse_pct_points": {
+    "base": 1.1997854045360088,
+    "jloss": 1.259193093633915,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 4.95152623738417,
+    "n_runs": 40
+   },
+   "test_random/all/mean_abs_J_minus_1_pred": {
+    "base": 0.03410923480987549,
+    "jloss": 0.02104341797530651,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -38.3058045933827,
+    "n_runs": 40
+   },
+   "test_random/early_stopped_runs/nrmse_dr": {
+    "base": 0.0866696685552597,
+    "jloss": 0.07516223937273026,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -13.277343013250857,
+    "n_runs": 12
+   },
+   "test_random/early_stopped_runs/nrmse_dz": {
+    "base": 0.04542962461709976,
+    "jloss": 0.053201157599687576,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 17.106751482297305,
+    "n_runs": 12
+   },
+   "test_random/early_stopped_runs/nrmse_strain": {
+    "base": 0.13789106905460358,
+    "jloss": 0.125705286860466,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -8.837252679005713,
+    "n_runs": 12
+   },
+   "test_random/early_stopped_runs/force_rmse": {
+    "base": 0.02881939709186554,
+    "jloss": 0.028149068355560303,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -2.3259637742194177,
+    "n_runs": 12
+   },
+   "test_random/early_stopped_runs/force_mean_rel_err": {
+    "base": 0.008551388047635555,
+    "jloss": 0.008249218575656414,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -3.5335722141938186,
+    "n_runs": 12
+   },
+   "test_random/early_stopped_runs/id_rmse_pct_points": {
+    "base": 1.5276904280333847,
+    "jloss": 1.5736950941259606,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 3.011386682038606,
+    "n_runs": 12
+   },
+   "test_random/early_stopped_runs/mean_abs_J_minus_1_pred": {
+    "base": 0.044724125415086746,
+    "jloss": 0.02483774721622467,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -44.46454349704024,
+    "n_runs": 12
+   },
+   "test_random/completed_runs/nrmse_dr": {
+    "base": 0.052071791142225266,
+    "jloss": 0.045767560601234436,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -12.106805628736474,
+    "n_runs": 28
+   },
+   "test_random/completed_runs/nrmse_dz": {
+    "base": 0.026990091428160667,
+    "jloss": 0.03127672150731087,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 15.882236229395119,
+    "n_runs": 28
+   },
+   "test_random/completed_runs/nrmse_strain": {
+    "base": 0.06300253421068192,
+    "jloss": 0.0586412288248539,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -6.922428503024518,
+    "n_runs": 28
+   },
+   "test_random/completed_runs/force_rmse": {
+    "base": 0.03587353974580765,
+    "jloss": 0.03826609626412392,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 6.6694185610603824,
+    "n_runs": 28
+   },
+   "test_random/completed_runs/force_mean_rel_err": {
+    "base": 0.009738554246723652,
+    "jloss": 0.00991867482662201,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 1.849561806968991,
+    "n_runs": 28
+   },
+   "test_random/completed_runs/id_rmse_pct_points": {
+    "base": 1.0532930084963827,
+    "jloss": 1.121055145429039,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 6.433360554570596,
+    "n_runs": 28
+   },
+   "test_random/completed_runs/mean_abs_J_minus_1_pred": {
+    "base": 0.029559994116425514,
+    "jloss": 0.019417274743318558,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -34.312318646474225,
+    "n_runs": 28
+   },
+   "test_ood_geometry/all/nrmse_dr": {
+    "base": 0.13498815894126892,
+    "jloss": 0.13049297034740448,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -3.3300614136238584,
+    "n_runs": 40
+   },
+   "test_ood_geometry/all/nrmse_dz": {
+    "base": 0.06495007127523422,
+    "jloss": 0.06342172622680664,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -2.353107576974049,
+    "n_runs": 40
+   },
+   "test_ood_geometry/all/nrmse_strain": {
+    "base": 0.1814090758562088,
+    "jloss": 0.16440042853355408,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -9.37585247175636,
+    "n_runs": 40
+   },
+   "test_ood_geometry/all/force_rmse": {
+    "base": 0.039481353014707565,
+    "jloss": 0.03609079867601395,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -8.587735930505147,
+    "n_runs": 40
+   },
+   "test_ood_geometry/all/force_mean_rel_err": {
+    "base": 0.011756964959204197,
+    "jloss": 0.010609777644276619,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -9.757512409947921,
+    "n_runs": 40
+   },
+   "test_ood_geometry/all/id_rmse_pct_points": {
+    "base": 3.3156984672502885,
+    "jloss": 2.785424345672931,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -15.992833088260712,
+    "n_runs": 40
+   },
+   "test_ood_geometry/all/mean_abs_J_minus_1_pred": {
+    "base": 0.028509080410003662,
+    "jloss": 0.021880293264985085,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -23.251494084293846,
+    "n_runs": 40
+   },
+   "test_ood_geometry/early_stopped_runs/nrmse_dr": {
+    "base": 0.2282348871231079,
+    "jloss": 0.22520454227924347,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -1.3277307786122545,
+    "n_runs": 9
+   },
+   "test_ood_geometry/early_stopped_runs/nrmse_dz": {
+    "base": 0.0920042023062706,
+    "jloss": 0.08503840863704681,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -7.571169027731495,
+    "n_runs": 9
+   },
+   "test_ood_geometry/early_stopped_runs/nrmse_strain": {
+    "base": 0.29445308446884155,
+    "jloss": 0.27266591787338257,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -7.399197951945537,
+    "n_runs": 9
+   },
+   "test_ood_geometry/early_stopped_runs/force_rmse": {
+    "base": 0.036865223199129105,
+    "jloss": 0.03809262439608574,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 3.3294283621362433,
+    "n_runs": 9
+   },
+   "test_ood_geometry/early_stopped_runs/force_mean_rel_err": {
+    "base": 0.011211213655769825,
+    "jloss": 0.011386828497052193,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 1.566421323100804,
+    "n_runs": 9
+   },
+   "test_ood_geometry/early_stopped_runs/id_rmse_pct_points": {
+    "base": 6.339693097233875,
+    "jloss": 5.3874723128535305,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -15.019982352076568,
+    "n_runs": 9
+   },
+   "test_ood_geometry/early_stopped_runs/mean_abs_J_minus_1_pred": {
+    "base": 0.029837019741535187,
+    "jloss": 0.021059563383460045,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -29.41800633612317,
+    "n_runs": 9
+   },
+   "test_ood_geometry/completed_runs/nrmse_dr": {
+    "base": 0.09696222841739655,
+    "jloss": 0.09039586782455444,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -6.772080943288215,
+    "n_runs": 31
+   },
+   "test_ood_geometry/completed_runs/nrmse_dz": {
+    "base": 0.06351493299007416,
+    "jloss": 0.062782883644104,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -1.1525625730952993,
+    "n_runs": 31
+   },
+   "test_ood_geometry/completed_runs/nrmse_strain": {
+    "base": 0.12355950474739075,
+    "jloss": 0.10711044073104858,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -13.312665868944027,
+    "n_runs": 31
+   },
+   "test_ood_geometry/completed_runs/force_rmse": {
+    "base": 0.040010325610637665,
+    "jloss": 0.03565504774451256,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -10.885384709209054,
+    "n_runs": 31
+   },
+   "test_ood_geometry/completed_runs/force_mean_rel_err": {
+    "base": 0.011871861293911934,
+    "jloss": 0.010446188971400261,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -12.008835743749625,
+    "n_runs": 31
+   },
+   "test_ood_geometry/completed_runs/id_rmse_pct_points": {
+    "base": 2.242477138628198,
+    "jloss": 1.8476653197931068,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -17.606057695491664,
+    "n_runs": 31
+   },
+   "test_ood_geometry/completed_runs/mean_abs_J_minus_1_pred": {
+    "base": 0.028123551979660988,
+    "jloss": 0.022118570283055305,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -21.352145351157983,
+    "n_runs": 31
+   },
+   "test_fine_mesh/all/nrmse_dr": {
+    "base": 0.3961709141731262,
+    "jloss": 0.40320953726768494,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 1.7766632639474502,
+    "n_runs": 20
+   },
+   "test_fine_mesh/all/nrmse_dz": {
+    "base": 0.2571686804294586,
+    "jloss": 0.23434564471244812,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -8.874733765751408,
+    "n_runs": 20
+   },
+   "test_fine_mesh/all/nrmse_strain": {
+    "base": 0.5830736756324768,
+    "jloss": 0.5596187710762024,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -4.022631364866919,
+    "n_runs": 20
+   },
+   "test_fine_mesh/all/force_rmse": {
+    "base": 0.08263415843248367,
+    "jloss": 0.0715465396642685,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -13.417718505930365,
+    "n_runs": 20
+   },
+   "test_fine_mesh/all/force_mean_rel_err": {
+    "base": 0.044984083622694016,
+    "jloss": 0.03842369467020035,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -14.583800367079208,
+    "n_runs": 20
+   },
+   "test_fine_mesh/all/id_rmse_pct_points": {
+    "base": 5.428817848748077,
+    "jloss": 5.378373862448344,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -0.9291891477140967,
+    "n_runs": 20
+   },
+   "test_fine_mesh/all/mean_abs_J_minus_1_pred": {
+    "base": 0.054448287934064865,
+    "jloss": 0.04236013814806938,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -22.201156812559187,
+    "n_runs": 20
+   },
+   "test_fine_mesh/early_stopped_runs/nrmse_dr": {
+    "base": 0.316104531288147,
+    "jloss": 0.3266034424304962,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 3.321341551026011,
+    "n_runs": 10
+   },
+   "test_fine_mesh/early_stopped_runs/nrmse_dz": {
+    "base": 0.22909389436244965,
+    "jloss": 0.2145708203315735,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -6.339354469176377,
+    "n_runs": 10
+   },
+   "test_fine_mesh/early_stopped_runs/nrmse_strain": {
+    "base": 0.5778592824935913,
+    "jloss": 0.5557517409324646,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -3.825765585304393,
+    "n_runs": 10
+   },
+   "test_fine_mesh/early_stopped_runs/force_rmse": {
+    "base": 0.09745502471923828,
+    "jloss": 0.08290642499923706,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -14.928527043028115,
+    "n_runs": 10
+   },
+   "test_fine_mesh/early_stopped_runs/force_mean_rel_err": {
+    "base": 0.05644583702087402,
+    "jloss": 0.047214385122060776,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -16.354530973470016,
+    "n_runs": 10
+   },
+   "test_fine_mesh/early_stopped_runs/id_rmse_pct_points": {
+    "base": 1.841628043532988,
+    "jloss": 1.9668725962152587,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 6.80075181967804,
+    "n_runs": 10
+   },
+   "test_fine_mesh/early_stopped_runs/mean_abs_J_minus_1_pred": {
+    "base": 0.052251607179641724,
+    "jloss": 0.0415293388068676,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -20.520456597460864,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/nrmse_dr": {
+    "base": 0.464082270860672,
+    "jloss": 0.4697672128677368,
+    "lower_is_better_winner": "base",
+    "rel_change_pct": 1.224985819113863,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/nrmse_dz": {
+    "base": 0.28455522656440735,
+    "jloss": 0.25666630268096924,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -9.800882668772777,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/nrmse_strain": {
+    "base": 0.597221314907074,
+    "jloss": 0.572176992893219,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -4.19347424291978,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/force_rmse": {
+    "base": 0.06891541182994843,
+    "jloss": 0.06125513091683388,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -11.115483038854359,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/force_mean_rel_err": {
+    "base": 0.03605598211288452,
+    "jloss": 0.03157621622085571,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -12.42447335924314,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/id_rmse_pct_points": {
+    "base": 7.033284422141663,
+    "jloss": 6.938175713163848,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -1.3522659296757673,
+    "n_runs": 10
+   },
+   "test_fine_mesh/completed_runs/mean_abs_J_minus_1_pred": {
+    "base": 0.05664496868848801,
+    "jloss": 0.043190933763980865,
+    "lower_is_better_winner": "jloss",
+    "rel_change_pct": -23.751509156083994,
+    "n_runs": 10
+   }
+  },
+  "metric_wins": {
+   "jloss": 47,
+   "base": 16
+  }
+ },
+ "figures": [],
+ "notes": "30 epochs is a compute-budget cap, not a tuned value; single seed, so small differences are within run-to-run noise that was not measured.",
+ "created": "2026-10-12T01:57:37"
+}

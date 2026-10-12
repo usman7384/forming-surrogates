@@ -1,0 +1,114 @@
+{
+ "task": "N7",
+ "title": "DDP (gloo, 2 CPU processes) smoke test and one-epoch profile",
+ "command": "python -m surrogates.gnn.ddp_profile --data smoke --out results/gnn",
+ "git": "da507ca",
+ "data": {
+  "dataset": "smoke",
+  "n_runs": null
+ },
+ "metrics": {
+  "single_process_epoch": {
+   "data_collate_s": 0.04382389987586066,
+   "forward_s": 1.5823702001362108,
+   "backward_opt_s": 2.669198099989444,
+   "epoch_s": 4.298473400005605,
+   "batches": 10,
+   "rank": 0,
+   "world": 1,
+   "param_checksum": 18912.983313301935
+  },
+  "ddp_gloo_2_cpu_procs_epoch": {
+   "rank0": {
+    "data_collate_s": 0.040928800008259714,
+    "forward_s": 1.7773314999649301,
+    "backward_opt_s": 2.852765899966471,
+    "epoch_s": 4.673883999988902,
+    "batches": 5,
+    "rank": 0,
+    "world": 2,
+    "param_checksum": 18894.02950965341
+   },
+   "rank1": {
+    "data_collate_s": 0.02055889996699989,
+    "forward_s": 1.7960825000191107,
+    "backward_opt_s": 2.8504110999638215,
+    "epoch_s": 4.670564099971671,
+    "batches": 5,
+    "rank": 1,
+    "world": 2,
+    "param_checksum": 18894.02950965341
+   }
+  },
+  "ddp_epoch_s_max_rank": 4.673883999988902,
+  "epoch_time_ratio_noisy": 0.919679093451145,
+  "replica_weights_identical": true,
+  "top_cpu_ops_single_process": [
+   {
+    "op": "aten::mm",
+    "self_cpu_ms": 1900.6228999999785,
+    "calls": 1100,
+    "share": 0.2826187531298095
+   },
+   {
+    "op": "aten::addmm",
+    "self_cpu_ms": 705.9660999999844,
+    "calls": 560,
+    "share": 0.10497572081969139
+   },
+   {
+    "op": "aten::_index_put_impl_",
+    "self_cpu_ms": 594.3026000000041,
+    "calls": 270,
+    "share": 0.08837158585946057
+   },
+   {
+    "op": "aten::cat",
+    "self_cpu_ms": 489.7492000000063,
+    "calls": 250,
+    "share": 0.07282470828396577
+   },
+   {
+    "op": "aten::add_",
+    "self_cpu_ms": 281.54839999998836,
+    "calls": 4000,
+    "share": 0.041865673487197524
+   },
+   {
+    "op": "aten::native_layer_norm_backward",
+    "self_cpu_ms": 236.45380000000821,
+    "calls": 260,
+    "share": 0.035160198337507366
+   },
+   {
+    "op": "aten::index",
+    "self_cpu_ms": 231.90829999998812,
+    "calls": 310,
+    "share": 0.03448429174795862
+   },
+   {
+    "op": "autograd::engine::evaluate_function: AddmmBackward0",
+    "self_cpu_ms": 229.73029999997334,
+    "calls": 560,
+    "share": 0.0341604275851513
+   }
+  ],
+  "model": {
+   "latent": 64,
+   "steps": 12,
+   "batch_size": 16,
+   "threads_per_proc": 2
+  },
+  "platform": {
+   "os": "Windows-10-10.0.26200-SP0",
+   "python": "3.11.9",
+   "torch": "2.14.1+cpu",
+   "backend": "gloo",
+   "init_method": "file://",
+   "device": "cpu"
+  }
+ },
+ "figures": [],
+ "notes": "Timings were taken on a loaded machine and show NO speed-up claim (epoch_time_ratio_noisy is noise). Profile of the 2nd epoch (after warm-up). Machine was shared with a running campaign, so absolute timings are noisy. With graphs this small, per-process overhead and gradient all-reduce can outweigh the gain; this checks correctness of the code path, not scaling.",
+ "created": "2026-10-11T23:18:32"
+}

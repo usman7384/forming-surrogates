@@ -1,0 +1,12 @@
+name: overfit2
+seed: 0
+latent: 64
+steps: 6
+lr: 0.002
+epochs: 400
+batch_size: 2
+val_frac: 0.0
+lambda_j: 0.0
+threads: 2
+overfit_samples: 2
+lr_final_frac: 0.01

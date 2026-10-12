@@ -1,0 +1,132 @@
+{
+ "task": "N6",
+ "title": "GNN evaluation (smoke)",
+ "command": "python -m surrogates.gnn.evaluate --run artifacts/gnn/smoke --data smoke --out results/gnn/smoke_eval",
+ "git": "da507ca",
+ "data": {
+  "dataset": "smoke",
+  "n_runs": 4,
+  "splits": {
+   "test_random": 1,
+   "test_ood_geometry": 2,
+   "test_fine_mesh": 1
+  }
+ },
+ "metrics": {
+  "test_random": {
+   "nrmse_dr": 0.513374924659729,
+   "nrmse_dz": 0.5045610666275024,
+   "nrmse_strain": 0.5202096104621887,
+   "force_rmse": 0.1411222517490387,
+   "force_mean_rel_err": 0.06266555935144424,
+   "id_rmse_pct_points": 1.9755811930010192,
+   "id_n_rows": 3,
+   "mean_abs_J_minus_1_pred": 0.06569147109985352,
+   "mean_abs_J_minus_1_solver": 0.004403221420943737,
+   "n_runs": 1,
+   "id_rmse_pct_points_mlp_baseline": 0.3582942801001109
+  },
+  "test_ood_geometry": {
+   "nrmse_dr": 0.4851047396659851,
+   "nrmse_dz": 0.5478226542472839,
+   "nrmse_strain": 0.5599010586738586,
+   "force_rmse": 0.08383873850107193,
+   "force_mean_rel_err": 0.036120373755693436,
+   "id_rmse_pct_points": 3.4069387633549617,
+   "id_n_rows": 6,
+   "mean_abs_J_minus_1_pred": 0.1888318955898285,
+   "mean_abs_J_minus_1_solver": 0.009346246719360352,
+   "n_runs": 2,
+   "id_rmse_pct_points_mlp_baseline": 4.318260086278427
+  },
+  "test_fine_mesh": {
+   "nrmse_dr": 0.5844030976295471,
+   "nrmse_dz": 0.5282769203186035,
+   "nrmse_strain": 0.6225978136062622,
+   "force_rmse": 0.16447106003761292,
+   "force_mean_rel_err": 0.07652647793292999,
+   "id_rmse_pct_points": 1.3801659660218888,
+   "id_n_rows": 3,
+   "mean_abs_J_minus_1_pred": 0.05311721935868263,
+   "mean_abs_J_minus_1_solver": 0.0030525836627930403,
+   "n_runs": 1,
+   "id_rmse_pct_points_mlp_baseline": 0.3589742059324091
+  },
+  "inference": {
+   "ms_per_sample_batched_run": 1.073715789396757,
+   "mean_solver_runtime_s_per_run": 14.447499999999998,
+   "note": "one GNN sample = one stroke position; a solver run covers the whole stroke on one CPU (teaching-scale solver, not an industrial one)"
+  },
+  "failure_gallery": [
+   {
+    "rank": 1,
+    "run_id": "run_0012",
+    "split": "test_fine_mesh",
+    "s": 1.0,
+    "score": 1.9159870147705078,
+    "case": {
+     "od_id": 1.721133171293457,
+     "h_id": 0.46663072993906,
+     "mf": 0.20659564840437503,
+     "m": 0.29105512008227324
+    },
+    "figure": "results/gnn/smoke_eval/figures/gallery_00_run_0012_s100.png",
+    "hypothesis (untested)": "late stroke (s=1.00): largest displacements, so absolute error is largest; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 2,
+    "run_id": "run_0009",
+    "split": "test_random",
+    "s": 1.0,
+    "score": 1.6292963027954102,
+    "case": {
+     "od_id": 1.721133171293457,
+     "h_id": 0.46663072993906,
+     "mf": 0.20659564840437503,
+     "m": 0.29105512008227324
+    },
+    "figure": "results/gnn/smoke_eval/figures/gallery_01_run_0009_s100.png",
+    "hypothesis (untested)": "late stroke (s=1.00): largest displacements, so absolute error is largest"
+   },
+   {
+    "rank": 3,
+    "run_id": "run_0011",
+    "split": "test_ood_geometry",
+    "s": 1.0,
+    "score": 1.459592580795288,
+    "case": {
+     "od_id": 1.9386611591780605,
+     "h_id": 1.006889778310767,
+     "mf": 0.4091991363691613,
+     "m": 0.1873984219182649
+    },
+    "figure": "results/gnn/smoke_eval/figures/gallery_02_run_0011_s100.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 1.94, H/ID 1.01) lies outside the training box; late stroke (s=1.00): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 4,
+    "run_id": "run_0010",
+    "split": "test_ood_geometry",
+    "s": 1.0,
+    "score": 1.4095234870910645,
+    "case": {
+     "od_id": 2.5247325808041943,
+     "h_id": 0.9702782177955612,
+     "mf": 0.14415961271963373,
+     "m": 0.287162361784311
+    },
+    "figure": "results/gnn/smoke_eval/figures/gallery_03_run_0010_s100.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.52, H/ID 0.97) lies outside the training box; late stroke (s=1.00): largest displacements, so absolute error is largest"
+   }
+  ]
+ },
+ "figures": [
+  "results/gnn/smoke_eval/figures/gallery_00_run_0012_s100.png",
+  "results/gnn/smoke_eval/figures/gallery_01_run_0009_s100.png",
+  "results/gnn/smoke_eval/figures/gallery_02_run_0011_s100.png",
+  "results/gnn/smoke_eval/figures/gallery_03_run_0010_s100.png",
+  "results/gnn/smoke_eval/figures/training_curves.png"
+ ],
+ "notes": "checkpoint best.pt of artifacts/gnn/smoke; lambda_j=0.0; nRMSE = RMSE / std of the solver truth over the split. Gallery hypotheses are rule-derived guesses to be tested.",
+ "created": "2026-10-11T23:19:53"
+}

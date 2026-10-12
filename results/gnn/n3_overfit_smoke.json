@@ -1,0 +1,30 @@
+{
+ "task": "N3",
+ "title": "Overfit two graphs",
+ "command": "python -m surrogates.gnn.overfit --data smoke --out results/gnn",
+ "git": "54c0eb3",
+ "data": {
+  "dataset": "smoke",
+  "n_runs": 2
+ },
+ "metrics": {
+  "epochs": 400,
+  "n_graphs": 2,
+  "first": {
+   "train_total": 3.2844934463500977,
+   "train_disp": 0.821388304233551,
+   "train_strain": 1.1494839191436768,
+   "train_force": 1.3136212825775146
+  },
+  "final": {
+   "train_total": 0.0003238431818317622,
+   "train_disp": 9.240335930371657e-05,
+   "train_strain": 0.00023143978614825755,
+   "train_force": 2.674171994954122e-11
+  },
+  "note_units": "losses are MSE on normalised targets (1.0 = predicting the training mean)"
+ },
+ "figures": [],
+ "notes": "config surrogates/gnn/configs/overfit2.yaml; two (run, step) samples from different runs; lambda_j=0.0",
+ "created": "2026-10-11T22:53:24"
+}

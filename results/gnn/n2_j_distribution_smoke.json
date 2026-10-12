@@ -1,0 +1,158 @@
+{
+ "task": "N2",
+ "title": "Per-triangle volume ratio J on solver data",
+ "command": "python -m surrogates.gnn.j_stats --data smoke --out results/gnn",
+ "git": "54c0eb3",
+ "data": {
+  "dataset": "smoke",
+  "n_runs": 13,
+  "splits": {
+   "train": 9,
+   "test_random": 1,
+   "test_ood_geometry": 2,
+   "test_fine_mesh": 1
+  }
+ },
+ "metrics": {
+  "abs_J_minus_1_all": {
+   "mean": 0.012611414505250633,
+   "median": 0.003712778595288624,
+   "p90": 0.029951375379081074,
+   "p99": 0.12319431336133478,
+   "max": 0.9326955123007731,
+   "n": 46880
+  },
+  "abs_J_minus_1_by_split": {
+   "train": {
+    "mean": 0.01737856218173155,
+    "median": 0.006533804650951991,
+    "p90": 0.04073254183492087,
+    "p99": 0.15368578364546584,
+    "max": 0.9326955123007731,
+    "n": 28880
+   },
+   "test_random": {
+    "mean": 0.004403220080658401,
+    "median": 0.0018714895162288414,
+    "p90": 0.010975411975283459,
+    "p99": 0.030104349640775373,
+    "max": 0.21272616402289246,
+    "n": 3744
+   },
+   "test_ood_geometry": {
+    "mean": 0.007901612862558123,
+    "median": 0.002501515796807574,
+    "p90": 0.019980280899950333,
+    "p99": 0.0678329425927237,
+    "max": 0.6162897423029388,
+    "n": 6048
+   },
+   "test_fine_mesh": {
+    "mean": 0.003052585967715138,
+    "median": 0.0012596387944071585,
+    "p90": 0.007467024810570311,
+    "p99": 0.019668472050318655,
+    "max": 0.26593791307215087,
+    "n": 8208
+   }
+  },
+  "signed_mean_J_minus_1_per_run_mean": -0.0009462305440499749,
+  "per_run": {
+   "run_0000": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.018903612570099787,
+    "max_abs_J_minus_1": 0.7575518017742797,
+    "worst_step_mean": 0.04308553472713741
+   },
+   "run_0001": {
+    "split": "train",
+    "stopped_early": true,
+    "mean_abs_J_minus_1": 0.02361263126439853,
+    "max_abs_J_minus_1": 0.9326955123007731,
+    "worst_step_mean": 0.04712372479787959
+   },
+   "run_0002": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.017776464396564905,
+    "max_abs_J_minus_1": 0.6031133450083217,
+    "worst_step_mean": 0.04163531422220992
+   },
+   "run_0003": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.029888302715747515,
+    "max_abs_J_minus_1": 0.7529476717724313,
+    "worst_step_mean": 0.06809727222385484
+   },
+   "run_0004": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.004659838628670898,
+    "max_abs_J_minus_1": 0.17521539970107858,
+    "worst_step_mean": 0.010743080940574702
+   },
+   "run_0005": {
+    "split": "train",
+    "stopped_early": true,
+    "mean_abs_J_minus_1": 0.020513263243314147,
+    "max_abs_J_minus_1": 0.9157140346963291,
+    "worst_step_mean": 0.04192908474708813
+   },
+   "run_0006": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.01690819307727481,
+    "max_abs_J_minus_1": 0.6078375676614538,
+    "worst_step_mean": 0.038320785247962674
+   },
+   "run_0007": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.0008840010673324581,
+    "max_abs_J_minus_1": 0.028258265945071193,
+    "worst_step_mean": 0.0020759031037914
+   },
+   "run_0008": {
+    "split": "train",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.025737800882330464,
+    "max_abs_J_minus_1": 0.4877483672703786,
+    "worst_step_mean": 0.055530296619202765
+   },
+   "run_0009": {
+    "split": "test_random",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.004403220080658402,
+    "max_abs_J_minus_1": 0.21272616402289246,
+    "worst_step_mean": 0.009979217729553588
+   },
+   "run_0010": {
+    "split": "test_ood_geometry",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.0032787708708014616,
+    "max_abs_J_minus_1": 0.125630787637535,
+    "worst_step_mean": 0.007604424721987229
+   },
+   "run_0011": {
+    "split": "test_ood_geometry",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.015413731099162699,
+    "max_abs_J_minus_1": 0.6162897423029388,
+    "worst_step_mean": 0.034159852028825016
+   },
+   "run_0012": {
+    "split": "test_fine_mesh",
+    "stopped_early": false,
+    "mean_abs_J_minus_1": 0.0030525859677151376,
+    "max_abs_J_minus_1": 0.26593791307215087,
+    "worst_step_mean": 0.006968607609655664
+   }
+  },
+  "id_probe_vs_stored_curve_max_abs_err_pct": 0.0
+ },
+ "figures": [],
+ "notes": "J=(A/A0)*(rbar/rbar0) from saved node positions, steps 1.. of every ok run; stopped-early runs included (flagged per run).",
+ "created": "2026-10-11T22:41:02"
+}

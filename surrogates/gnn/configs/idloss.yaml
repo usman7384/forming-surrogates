@@ -1,0 +1,14 @@
+# jloss + an auxiliary loss on the inner-diameter read-off (predicted inner mid-plane node vs the solver's), so the GNN
+# is trained on the quantity it is judged on. 30 epochs is a compute-budget cap, not a tuned value.
+name: idloss
+seed: 0
+latent: 64
+steps: 12
+lr: 0.001
+epochs: 30
+batch_size: 16
+val_frac: 0.15
+lambda_j: 1.0
+lambda_id: 1.0
+id_scale: 5.0
+threads: 3

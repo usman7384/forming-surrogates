@@ -1,0 +1,85 @@
+{
+ "task": "N5",
+ "title": "MLP ensemble scalar baseline",
+ "command": "python -m surrogates.baselines.mlp_scalar --data smoke --out results/gnn --epochs 600 --threads 2",
+ "git": "54c0eb3",
+ "data": {
+  "dataset": "smoke",
+  "n_rows_train": 25,
+  "splits": {
+   "test_random": 1,
+   "test_ood_geometry": 2,
+   "test_fine_mesh": 1
+  }
+ },
+ "metrics": {
+  "by_split": {
+   "train": {
+    "id_change_pct": {
+     "rmse": 0.15482579874037422,
+     "coverage95": 0.44,
+     "mean_std": 0.04801548894112915,
+     "n_rows": 25
+    },
+    "log_force_norm": {
+     "rmse": 0.005830572137348034,
+     "coverage95": 0.44,
+     "mean_std": 0.000669183115676481,
+     "n_rows": 25
+    }
+   },
+   "test_random": {
+    "id_change_pct": {
+     "rmse": 0.3582942801001109,
+     "coverage95": 1.0,
+     "mean_std": 1.3745743914493442,
+     "n_rows": 3
+    },
+    "log_force_norm": {
+     "rmse": 0.010112890132992429,
+     "coverage95": 1.0,
+     "mean_std": 0.019041635007985048,
+     "n_rows": 3
+    }
+   },
+   "test_ood_geometry": {
+    "id_change_pct": {
+     "rmse": 4.318260086278427,
+     "coverage95": 1.0,
+     "mean_std": 2.5667366230509443,
+     "n_rows": 6
+    },
+    "log_force_norm": {
+     "rmse": 0.04222111652847735,
+     "coverage95": 1.0,
+     "mean_std": 0.041931498337262646,
+     "n_rows": 6
+    }
+   },
+   "test_fine_mesh": {
+    "id_change_pct": {
+     "rmse": 0.3589742059324091,
+     "coverage95": 1.0,
+     "mean_std": 1.3745743914493442,
+     "n_rows": 3
+    },
+    "log_force_norm": {
+     "rmse": 0.010144241591819729,
+     "coverage95": 1.0,
+     "mean_std": 0.019041635007985048,
+     "n_rows": 3
+    }
+   }
+  },
+  "reductions": [
+   0.1,
+   0.2,
+   0.3
+  ],
+  "members": 5,
+  "epochs": 600
+ },
+ "figures": [],
+ "notes": "Targets: id_change_pct and log(force_norm) at fixed reductions via scalar_table. Std = ensemble spread; coverage reported as measured (not calibrated). On smoke data the test splits hold 1-2 runs, so these numbers only prove the pipeline.",
+ "created": "2026-10-11T22:47:27"
+}

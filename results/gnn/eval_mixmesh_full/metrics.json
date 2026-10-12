@@ -1,0 +1,300 @@
+{
+ "task": "N6",
+ "title": "GNN evaluation (mixmesh)",
+ "command": "python -m surrogates.gnn.evaluate --run artifacts/gnn/mixmesh --data full --out results/gnn/eval_mixmesh_full",
+ "git": "a9a34fd",
+ "data": {
+  "dataset": "full",
+  "n_runs": 100,
+  "splits": {
+   "test_random": 40,
+   "test_ood_geometry": 40,
+   "test_fine_mesh": 20
+  }
+ },
+ "metrics": {
+  "test_random": {
+   "nrmse_dr": 0.04771941527724266,
+   "nrmse_dz": 0.031004562973976135,
+   "nrmse_strain": 0.08570042252540588,
+   "force_rmse": 0.030730988830327988,
+   "force_mean_rel_err": 0.00870526023209095,
+   "id_rmse_pct_points": 1.1594489520386118,
+   "id_n_rows": 115,
+   "mean_abs_J_minus_1_pred": 0.021360160782933235,
+   "mean_abs_J_minus_1_solver": 0.018763408064842224,
+   "n_runs": 40,
+   "early_stopped_runs": {
+    "nrmse_dr": 0.07468917965888977,
+    "nrmse_dz": 0.05207091569900513,
+    "nrmse_strain": 0.12499997019767761,
+    "force_rmse": 0.02907053381204605,
+    "force_mean_rel_err": 0.00897953100502491,
+    "id_rmse_pct_points": 1.4359095235102353,
+    "id_n_rows": 31,
+    "mean_abs_J_minus_1_pred": 0.0253556277602911,
+    "mean_abs_J_minus_1_solver": 0.02306577004492283,
+    "n_runs": 12
+   },
+   "completed_runs": {
+    "nrmse_dr": 0.036401309072971344,
+    "nrmse_dz": 0.025996821001172066,
+    "nrmse_strain": 0.05324619263410568,
+    "force_rmse": 0.03130863234400749,
+    "force_mean_rel_err": 0.008606274612247944,
+    "id_rmse_pct_points": 1.03900189269023,
+    "id_n_rows": 84,
+    "mean_abs_J_minus_1_pred": 0.019647812470793724,
+    "mean_abs_J_minus_1_solver": 0.016919536516070366,
+    "n_runs": 28
+   },
+   "id_rmse_pct_points_mlp_baseline": 0.10380644391718159
+  },
+  "test_ood_geometry": {
+   "nrmse_dr": 0.13641606271266937,
+   "nrmse_dz": 0.05911903455853462,
+   "nrmse_strain": 0.1677437722682953,
+   "force_rmse": 0.035914573818445206,
+   "force_mean_rel_err": 0.01046724058687687,
+   "id_rmse_pct_points": 2.958767267346188,
+   "id_n_rows": 112,
+   "mean_abs_J_minus_1_pred": 0.021579870954155922,
+   "mean_abs_J_minus_1_solver": 0.015842005610466003,
+   "n_runs": 40,
+   "early_stopped_runs": {
+    "nrmse_dr": 0.2257552295923233,
+    "nrmse_dz": 0.08492206782102585,
+    "nrmse_strain": 0.27429261803627014,
+    "force_rmse": 0.036084141582250595,
+    "force_mean_rel_err": 0.011187650263309479,
+    "id_rmse_pct_points": 5.359346204760307,
+    "id_n_rows": 19,
+    "mean_abs_J_minus_1_pred": 0.020803749561309814,
+    "mean_abs_J_minus_1_solver": 0.016812995076179504,
+    "n_runs": 9
+   },
+   "completed_runs": {
+    "nrmse_dr": 0.10136716812849045,
+    "nrmse_dz": 0.0576176755130291,
+    "nrmse_strain": 0.11259996145963669,
+    "force_rmse": 0.03587877377867699,
+    "force_mean_rel_err": 0.010315575636923313,
+    "id_rmse_pct_points": 2.1621195694524458,
+    "id_n_rows": 93,
+    "mean_abs_J_minus_1_pred": 0.02180519886314869,
+    "mean_abs_J_minus_1_solver": 0.015560104511678219,
+    "n_runs": 31
+   },
+   "id_rmse_pct_points_mlp_baseline": 0.7069727525083533
+  },
+  "test_fine_mesh": {
+   "nrmse_dr": 0.145606130361557,
+   "nrmse_dz": 0.06607069075107574,
+   "nrmse_strain": 0.18911707401275635,
+   "force_rmse": 0.03261283412575722,
+   "force_mean_rel_err": 0.01122941542416811,
+   "id_rmse_pct_points": 3.1450939068833996,
+   "id_n_rows": 53,
+   "mean_abs_J_minus_1_pred": 0.03094431385397911,
+   "mean_abs_J_minus_1_solver": 0.014361508190631866,
+   "n_runs": 20,
+   "early_stopped_runs": {
+    "nrmse_dr": 0.1843942254781723,
+    "nrmse_dz": 0.08672292530536652,
+    "nrmse_strain": 0.22865448892116547,
+    "force_rmse": 0.02494308166205883,
+    "force_mean_rel_err": 0.009233484044671059,
+    "id_rmse_pct_points": 3.5868647967369847,
+    "id_n_rows": 23,
+    "mean_abs_J_minus_1_pred": 0.031172653660178185,
+    "mean_abs_J_minus_1_solver": 0.014443179592490196,
+    "n_runs": 10
+   },
+   "completed_runs": {
+    "nrmse_dr": 0.11606229841709137,
+    "nrmse_dz": 0.05568913370370865,
+    "nrmse_strain": 0.14714260399341583,
+    "force_rmse": 0.037516068667173386,
+    "force_mean_rel_err": 0.01278414111584425,
+    "id_rmse_pct_points": 2.758905897836226,
+    "id_n_rows": 30,
+    "mean_abs_J_minus_1_pred": 0.030715975910425186,
+    "mean_abs_J_minus_1_solver": 0.014279833063483238,
+    "n_runs": 10
+   },
+   "id_rmse_pct_points_mlp_baseline": 0.1202844413896279
+  },
+  "inference": {
+   "ms_per_sample_batched_run": 11.661818648039192,
+   "mean_solver_runtime_s_per_run": 63.51619999999999,
+   "note": "one GNN sample = one stroke position; a solver run covers the whole stroke on one CPU (teaching-scale solver, not an industrial one)"
+  },
+  "failure_gallery": [
+   {
+    "rank": 1,
+    "run_id": "run_0412",
+    "split": "test_ood_geometry",
+    "s": 0.6571428775787354,
+    "score": 1.2547521591186523,
+    "case": {
+     "od_id": 2.7342276866001094,
+     "h_id": 0.4042550971618998,
+     "mf": 0.6457208955749478,
+     "m": 0.22997734587717328
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_00_run_0412_s65.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.73, H/ID 0.40) lies outside the training box; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 2,
+    "run_id": "run_0440",
+    "split": "test_fine_mesh",
+    "s": 0.6285714507102966,
+    "score": 1.0747714042663574,
+    "case": {
+     "od_id": 1.7210283292823365,
+     "h_id": 0.5006657682484765,
+     "mf": 0.6651648912101094,
+     "m": 0.11415137800205682
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_01_run_0440_s62.png",
+    "hypothesis (untested)": "run stopped early by fold-over: the last saved steps contain severely distorted triangles; finer mesh than training: node count and edge lengths differ from anything seen"
+   },
+   {
+    "rank": 3,
+    "run_id": "run_0426",
+    "split": "test_ood_geometry",
+    "s": 0.6571428775787354,
+    "score": 1.0286787748336792,
+    "case": {
+     "od_id": 2.716453579269122,
+     "h_id": 0.7460198297517713,
+     "mf": 0.9716899756197547,
+     "m": 0.24366603373093298
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_02_run_0426_s65.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.72, H/ID 0.75) lies outside the training box; near-sticking friction (m_f 0.97) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 4,
+    "run_id": "run_0416",
+    "split": "test_ood_geometry",
+    "s": 0.5142857432365417,
+    "score": 1.0239622592926025,
+    "case": {
+     "od_id": 2.732509933865784,
+     "h_id": 0.5473313603459066,
+     "mf": 0.7685169988962544,
+     "m": 0.10291868565187763
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_03_run_0416_s51.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.73, H/ID 0.55) lies outside the training box; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 5,
+    "run_id": "run_0406",
+    "split": "test_ood_geometry",
+    "s": 0.7142857313156128,
+    "score": 1.0047314167022705,
+    "case": {
+     "od_id": 2.645201320421216,
+     "h_id": 0.4695193674824622,
+     "mf": 0.6234897555375004,
+     "m": 0.2441707785855745
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_04_run_0406_s71.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.65, H/ID 0.47) lies outside the training box; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 6,
+    "run_id": "run_0420",
+    "split": "test_ood_geometry",
+    "s": 0.6000000238418579,
+    "score": 0.9812719225883484,
+    "case": {
+     "od_id": 2.7241097408425192,
+     "h_id": 0.6587360492664438,
+     "mf": 0.8673205056421992,
+     "m": 0.20803377937504175
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_05_run_0420_s60.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.72, H/ID 0.66) lies outside the training box; near-sticking friction (m_f 0.87) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 7,
+    "run_id": "run_0404",
+    "split": "test_ood_geometry",
+    "s": 0.9714285731315613,
+    "score": 0.8439221382141113,
+    "case": {
+     "od_id": 2.7846628774655144,
+     "h_id": 0.5682452547916239,
+     "mf": 0.48519097443163506,
+     "m": 0.29518429995030965
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_06_run_0404_s97.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.78, H/ID 0.57) lies outside the training box; run stopped early by fold-over: the last saved steps contain severely distorted triangles; late stroke (s=0.97): largest displacements, so absolute error is largest; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 8,
+    "run_id": "run_0414",
+    "split": "test_ood_geometry",
+    "s": 0.6285714507102966,
+    "score": 0.8261632919311523,
+    "case": {
+     "od_id": 2.635800824833619,
+     "h_id": 0.689327432919602,
+     "mf": 0.8947158621961735,
+     "m": 0.1556792267363593
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_07_run_0414_s62.png",
+    "hypothesis (untested)": "extrapolation: ring shape (OD/ID 2.64, H/ID 0.69) lies outside the training box; near-sticking friction (m_f 0.89) gives a dead-metal zone and sharp strain gradients that 12 smooth message-passing steps blur; run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 9,
+    "run_id": "run_0089",
+    "split": "test_random",
+    "s": 0.6857143044471741,
+    "score": 0.7237175107002258,
+    "case": {
+     "od_id": 2.116568164306149,
+     "h_id": 0.41214833785986577,
+     "mf": 0.6291456433744846,
+     "m": 0.08172566018019295
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_08_run_0089_s68.png",
+    "hypothesis (untested)": "run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy"
+   },
+   {
+    "rank": 10,
+    "run_id": "run_0449",
+    "split": "test_fine_mesh",
+    "s": 0.7428571581840515,
+    "score": 0.7053487300872803,
+    "case": {
+     "od_id": 2.2305035514498375,
+     "h_id": 0.4748699780153282,
+     "mf": 0.46893535939926495,
+     "m": 0.06350203007052911
+    },
+    "figure": "results/gnn/eval_mixmesh_full/figures/gallery_09_run_0449_s74.png",
+    "hypothesis (untested)": "run stopped early by fold-over: the last saved steps contain severely distorted triangles; solver mesh itself has a triangle with |J-1| > 0.5 here, so targets are locally noisy; finer mesh than training: node count and edge lengths differ from anything seen"
+   }
+  ]
+ },
+ "figures": [
+  "results/gnn/eval_mixmesh_full/figures/gallery_00_run_0412_s65.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_01_run_0440_s62.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_02_run_0426_s65.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_03_run_0416_s51.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_04_run_0406_s71.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_05_run_0420_s60.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_06_run_0404_s97.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_07_run_0414_s62.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_08_run_0089_s68.png",
+  "results/gnn/eval_mixmesh_full/figures/gallery_09_run_0449_s74.png",
+  "results/gnn/eval_mixmesh_full/figures/training_curves.png"
+ ],
+ "notes": "checkpoint best.pt of artifacts/gnn/mixmesh; lambda_j=1.0; nRMSE = RMSE / std of the solver truth over the split. Gallery hypotheses are rule-derived guesses to be tested.",
+ "created": "2026-10-12T14:55:02"
+}

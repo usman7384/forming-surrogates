@@ -1,0 +1,28 @@
+{
+ "task": "N4b",
+ "title": "case-overlap check: extra train vs main test splits",
+ "command": "python -m surrogates.gnn.leakage_check ",
+ "git": "da5ff86",
+ "data": {
+  "dataset": "full",
+  "n_runs": 60
+ },
+ "metrics": {
+  "n_extra_train_runs": 60,
+  "n_main_test_runs": 100,
+  "exact_overlaps_per_test_split": {
+   "test_random": 0,
+   "test_ood_geometry": 0,
+   "test_fine_mesh": 0
+  },
+  "min_normalised_distance_to_any_test_case": 0.53830633177638,
+  "median_nearest_test_distance": 0.8966239436689992,
+  "extra_nz": [
+   12
+  ],
+  "method": "exact match of (od_id, h_id, mf, m) within 1e-9, plus nearest-neighbour distance in units of the per-input standard deviation over all main-dataset cases"
+ },
+ "figures": [],
+ "notes": "Only the extra dataset's `train` split is used for training. Its own test_random is not used.",
+ "created": "2026-10-12T08:55:31"
+}
