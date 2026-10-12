@@ -1,0 +1,64 @@
+{
+  "task": "L2.3",
+  "title": "Fresh-clone regeneration vs committed results",
+  "command": "python tools/compare_runs.py ../clean-clone2 --out results/reproduction/clean_clone_check.json",
+  "git": "79509e3",
+  "data": {
+    "dataset": "full",
+    "n_runs": 460,
+    "splits": {}
+  },
+  "metrics": {
+    "artifacts_byte_identical": {
+      "artifacts/gp/id_gp.npz": true,
+      "artifacts/gp/force_gp.npz": true,
+      "artifacts/gp/support.json": true
+    },
+    "results": {
+      "results/gp/gp_accuracy.json": {
+        "numbers_compared": 222,
+        "max_relative_difference": 0.0
+      },
+      "results/gp/inverse_friction.json": {
+        "numbers_compared": 97,
+        "max_relative_difference": 0.0
+      },
+      "results/design/design.json": {
+        "numbers_compared": 62,
+        "max_relative_difference": 0.0
+      },
+      "results/gnn/eval_base_full/metrics.json": {
+        "numbers_compared": 94,
+        "max_relative_difference": 0.0
+      },
+      "results/gnn/eval_jloss_full/metrics.json": {
+        "numbers_compared": 94,
+        "max_relative_difference": 0.0
+      },
+      "results/gnn/eval_idloss_full/metrics.json": {
+        "numbers_compared": 94,
+        "max_relative_difference": 0.0
+      },
+      "results/gnn/eval_mixmesh_full/metrics.json": {
+        "numbers_compared": 94,
+        "max_relative_difference": 0.0
+      },
+      "results/plant/drift/metrics.json": {
+        "numbers_compared": 101,
+        "max_relative_difference": 0.0
+      },
+      "results/plant/nominal/metrics.json": {
+        "numbers_compared": 84,
+        "max_relative_difference": 0.0
+      },
+      "results/plant/by_split.json": {
+        "numbers_compared": 60,
+        "max_relative_difference": 0.0
+      }
+    },
+    "all_identical": true
+  },
+  "figures": [],
+  "notes": "The other tree was produced by re-running the GP fit (4 threads, fixed seed), design, inverse friction, the four GNN evaluations and both plant demos in a fresh clone with a new virtual environment; GNN training was not repeated (the committed checkpoints were evaluated). Latency/time/commit fields are skipped. artifacts/gp/meta.json differs only in the recorded code version.",
+  "created": "2026-10-12T11:50:07+00:00"
+}
