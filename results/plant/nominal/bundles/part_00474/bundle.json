@@ -1,0 +1,142 @@
+{
+  "reason": "go_verdict_but_missed",
+  "part_id": 474,
+  "lot_id": 9,
+  "model": "gp-matern52-ard",
+  "model_version": "6b15975",
+  "model_spec": "surrogates.gp_bo.api:load",
+  "config_hash": "9c0bb27ece53",
+  "config": {
+    "seed": 0,
+    "scenario": "nominal",
+    "n_parts": 600,
+    "model": "surrogates.gp_bo.api:load",
+    "artifact_dir": "artifacts/gp",
+    "dataset": "full",
+    "splits": [
+      "test_random",
+      "test_ood_geometry",
+      "test_fine_mesh"
+    ],
+    "lot_len": 50,
+    "reduction_sd": 0.008,
+    "id_scatter_pct": 0.15,
+    "k_lot_sd": 0.05,
+    "force_noise_kN": 0.5,
+    "force_clock_offset_ms": 3.0,
+    "drift_start_frac": 0.5,
+    "drift_slope_kN_per_part": 0.05,
+    "drift_gain_per_part": 0.002,
+    "friction_drift_q0": 0.4,
+    "friction_drift_q1": 0.9,
+    "label_every": 5,
+    "label_delay_parts": [
+      3,
+      8
+    ],
+    "label_sigma_pct": 0.3,
+    "tol_id_pct": 2.0,
+    "contact_threshold_kN": 5.0,
+    "contact_debounce": 3,
+    "friction_nodes": 1.7320508075688772,
+    "interval_k": 2.0,
+    "recovery": "none",
+    "rezero_window": 5,
+    "accept_tol_pct": 1.0,
+    "window_parts": 100,
+    "drift_window_parts": 50,
+    "drift_stride": 10,
+    "reference_parts": 100,
+    "psi_alert": 0.25,
+    "max_bundles": 20,
+    "bundle_nz": 8,
+    "pace_s": 0.25,
+    "assumed_cycle_time_s": 6.0
+  },
+  "git": "7b5b7ea",
+  "prediction": {
+    "mean_id_change_pct": -18.116726189705137,
+    "std_id_change_pct": 0.5597545080245031,
+    "verdict": "go"
+  },
+  "measurement": {
+    "id_change_pct": -19.305197080557342,
+    "sigma_pct": 0.3
+  },
+  "residual_pct": 1.188470890852205,
+  "accept_tol_pct": 1.0,
+  "friction_posterior_at_prediction": {
+    "mean": 0.80527046396683,
+    "std": 0.10715406611855896
+  },
+  "features": {
+    "reduction_est": 0.24900204473345164,
+    "f_zero_kN": -0.06842915909874575,
+    "peak_kN": 343.49955724409324,
+    "peak_force_norm": 1.5903210225214934,
+    "contact_pos_mm": 2.028765973476718,
+    "contact_anomaly": false
+  },
+  "ticket": {
+    "part_id": 474,
+    "lot_id": 9,
+    "od_id": 2.0595772296891,
+    "h_id": 0.7878861228232246,
+    "m": 0.06875293762288259,
+    "inner_diameter_mm": 30.0,
+    "nominal_reduction": 0.25,
+    "target_id_change_pct": -18.30881496254179,
+    "tol_id_pct": 2.0
+  },
+  "drift_alerts_so_far": [
+    {
+      "part_index": 439,
+      "feature": "peak_force_norm",
+      "psi": 7.36523193659713,
+      "ks_p": 9.936080740636988e-41,
+      "primary": false
+    },
+    {
+      "part_index": 449,
+      "feature": "peak_force_norm",
+      "psi": 7.36523193659713,
+      "ks_p": 9.936080740636988e-41,
+      "primary": false
+    },
+    {
+      "part_index": 459,
+      "feature": "peak_force_norm",
+      "psi": 4.137053228038884,
+      "ks_p": 9.276326784730295e-22,
+      "primary": false
+    },
+    {
+      "part_index": 469,
+      "feature": "peak_force_norm",
+      "psi": 3.58814694765898,
+      "ks_p": 1.3819568863779537e-11,
+      "primary": false
+    },
+    {
+      "part_index": 479,
+      "feature": "peak_force_norm",
+      "psi": 3.4126972822891366,
+      "ks_p": 5.432028505658231e-09,
+      "primary": false
+    }
+  ],
+  "inferred_inputs": {
+    "od_id": 2.0595772296891,
+    "h_id": 0.7878861228232246,
+    "mf": 0.80527046396683,
+    "reduction": 0.24900204473345164,
+    "m": 0.06875293762288259,
+    "K": 1.0,
+    "V": 1.0,
+    "n": 0.0,
+    "eps0": 0.01,
+    "friction": "tresca"
+  },
+  "rerun_command": "python -m plant.rerun_bundle results/plant/nominal/bundles/part_00474",
+  "note": "Inputs are what the edge service believed, not ground truth. Re-run to separate model error from input error."
+}

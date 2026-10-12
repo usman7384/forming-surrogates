@@ -1,0 +1,241 @@
+{
+  "task": "P8",
+  "title": "Plant demo acceptance by replay split",
+  "git": "7b5b7ea",
+  "command": "python -m plant.split_report --root results/plant",
+  "metrics": {
+    "drift": {
+      "lots_per_split": {
+        "test_random": 7,
+        "test_ood_geometry": 2,
+        "test_fine_mesh": 3
+      },
+      "parts_per_split": {
+        "test_random": 350,
+        "test_ood_geometry": 100,
+        "test_fine_mesh": 150
+      },
+      "verdicts_per_split": {
+        "test_random": {
+          "go": 198,
+          "check": 152
+        },
+        "test_ood_geometry": {
+          "check": 100
+        },
+        "test_fine_mesh": {
+          "check": 107,
+          "go": 43
+        }
+      },
+      "median_pred_std_pct_points": {
+        "test_random": 0.32944244707042325,
+        "test_ood_geometry": 2.3880751193443115,
+        "test_fine_mesh": 0.4367012871352389
+      },
+      "median_pred_std_pct_points_per_lot": {
+        "0": 0.2661560583510455,
+        "1": 0.22121407443237054,
+        "2": 0.272417334128252,
+        "3": 2.422904693296363,
+        "4": 0.21363048645717805,
+        "5": 0.33108309312660045,
+        "6": 0.23198493470733708,
+        "7": 2.2600622310511733,
+        "8": 0.5788728465424163,
+        "9": 0.713613955027139,
+        "10": 0.40013091768733633,
+        "11": 0.4173083044222694
+      },
+      "lot_split": {
+        "0": "test_random",
+        "1": "test_fine_mesh",
+        "2": "test_random",
+        "3": "test_ood_geometry",
+        "4": "test_random",
+        "5": "test_random",
+        "6": "test_random",
+        "7": "test_ood_geometry",
+        "8": "test_fine_mesh",
+        "9": "test_random",
+        "10": "test_random",
+        "11": "test_fine_mesh"
+      },
+      "acceptance_all": {
+        "test_random": {
+          "accepted": 42,
+          "measured": 70,
+          "rate": 0.6,
+          "wilson95": [
+            0.48293583076211255,
+            0.7066591942644307
+          ]
+        },
+        "test_ood_geometry": {
+          "accepted": 14,
+          "measured": 20,
+          "rate": 0.7,
+          "wilson95": [
+            0.4810232237710206,
+            0.854524726031006
+          ]
+        },
+        "test_fine_mesh": {
+          "accepted": 9,
+          "measured": 28,
+          "rate": 0.32142857142857145,
+          "wilson95": [
+            0.1793304754342074,
+            0.5066149544436882
+          ]
+        }
+      },
+      "acceptance_before_drift": {
+        "test_random": {
+          "accepted": 34,
+          "measured": 40,
+          "rate": 0.85,
+          "wilson95": [
+            0.7092737396097997,
+            0.9293890829149256
+          ]
+        },
+        "test_ood_geometry": {
+          "accepted": 9,
+          "measured": 10,
+          "rate": 0.9,
+          "wilson95": [
+            0.5958436145024278,
+            0.9821242504842788
+          ]
+        },
+        "test_fine_mesh": {
+          "accepted": 9,
+          "measured": 10,
+          "rate": 0.9,
+          "wilson95": [
+            0.5958436145024278,
+            0.9821242504842788
+          ]
+        }
+      },
+      "acceptance_after_drift": {
+        "test_random": {
+          "accepted": 8,
+          "measured": 30,
+          "rate": 0.26666666666666666,
+          "wilson95": [
+            0.14182495553910618,
+            0.4444830204431169
+          ]
+        },
+        "test_ood_geometry": {
+          "accepted": 5,
+          "measured": 10,
+          "rate": 0.5,
+          "wilson95": [
+            0.23658959361548731,
+            0.7634104063845126
+          ]
+        },
+        "test_fine_mesh": {
+          "accepted": 0,
+          "measured": 18,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.1758845505823749
+          ]
+        }
+      }
+    },
+    "nominal": {
+      "lots_per_split": {
+        "test_random": 7,
+        "test_ood_geometry": 2,
+        "test_fine_mesh": 3
+      },
+      "parts_per_split": {
+        "test_random": 350,
+        "test_ood_geometry": 100,
+        "test_fine_mesh": 150
+      },
+      "verdicts_per_split": {
+        "test_random": {
+          "go": 270,
+          "check": 80
+        },
+        "test_ood_geometry": {
+          "check": 100
+        },
+        "test_fine_mesh": {
+          "go": 122,
+          "check": 28
+        }
+      },
+      "median_pred_std_pct_points": {
+        "test_random": 0.2695364500645423,
+        "test_ood_geometry": 2.328139177797932,
+        "test_fine_mesh": 0.2726285633989258
+      },
+      "median_pred_std_pct_points_per_lot": {
+        "0": 0.2661560583510455,
+        "1": 0.22121407443237054,
+        "2": 0.272417334128252,
+        "3": 2.422904693296363,
+        "4": 0.21363048645717805,
+        "5": 0.33108309312660045,
+        "6": 0.23198493470733708,
+        "7": 2.1924942837581707,
+        "8": 0.29164739535575446,
+        "9": 0.3641748905961373,
+        "10": 0.20982222658606406,
+        "11": 0.23288797621239532
+      },
+      "lot_split": {
+        "0": "test_random",
+        "1": "test_fine_mesh",
+        "2": "test_random",
+        "3": "test_ood_geometry",
+        "4": "test_random",
+        "5": "test_random",
+        "6": "test_random",
+        "7": "test_ood_geometry",
+        "8": "test_fine_mesh",
+        "9": "test_random",
+        "10": "test_random",
+        "11": "test_fine_mesh"
+      },
+      "acceptance_all": {
+        "test_random": {
+          "accepted": 59,
+          "measured": 70,
+          "rate": 0.8428571428571429,
+          "wilson95": [
+            0.7401153685651781,
+            0.9099247172401131
+          ]
+        },
+        "test_ood_geometry": {
+          "accepted": 15,
+          "measured": 20,
+          "rate": 0.75,
+          "wilson95": [
+            0.5312949900419365,
+            0.888139947210597
+          ]
+        },
+        "test_fine_mesh": {
+          "accepted": 24,
+          "measured": 28,
+          "rate": 0.8571428571428571,
+          "wilson95": [
+            0.6850982695512267,
+            0.9430108706929821
+          ]
+        }
+      }
+    }
+  },
+  "notes": "Counts per split are small (label every 5th part, 12 lots per scenario); read the Wilson intervals."
+}

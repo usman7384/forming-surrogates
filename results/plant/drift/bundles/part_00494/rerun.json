@@ -1,0 +1,24 @@
+{
+  "solver_id_change_pct": -32.018386971179126,
+  "final_reduction": 0.37000000000000005,
+  "stopped_early": true,
+  "model_prediction_pct": -28.87413794340327,
+  "measured_pct": -18.934276466128555,
+  "numerics": {
+    "nz": 8
+  },
+  "case": {
+    "od_id": 2.0595772296891,
+    "h_id": 0.7878861228232246,
+    "mf": 0.8099035822689746,
+    "reduction": 0.4269062542540067,
+    "m": 0.06875293762288259,
+    "K": 1.0,
+    "V": 1.0,
+    "n": 0.0,
+    "eps0": 0.01,
+    "friction": "tresca"
+  },
+  "solver_minus_measured_pct": -13.084110505050571,
+  "solver_minus_prediction_pct": -3.1442490277758566
+}

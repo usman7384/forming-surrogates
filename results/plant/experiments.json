@@ -1,0 +1,650 @@
+{
+  "task": "P8",
+  "title": "Plant experiments: 20 seeds x drift types x recovery",
+  "command": "python -m plant.experiments --seeds 20 --workers 3 --model surrogates.gp_bo.api:load --artifact artifacts/gp --data full --work <work-dir>/exp_corr --out results/plant/experiments.json",
+  "git": "7b5b7ea",
+  "data": {
+    "dataset": "full",
+    "model": "surrogates.gp_bo.api:load",
+    "artifact": "artifacts/gp"
+  },
+  "metrics": {
+    "n_runs": 160,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "false_alarms": {
+      "basis": "nominal runs, recovery none; evaluations are made every 10 parts, so one sustained alarm counts several evaluations",
+      "evaluated_parts_per_run": 451,
+      "by_feature": {
+        "f_zero_kN": {
+          "alert_evaluations": 0,
+          "per_100_evaluated_parts": 0.0,
+          "runs_with_any_false_alarm": 0,
+          "runs": 20,
+          "run_rate": 0.0,
+          "run_rate_wilson95": [
+            0.0,
+            0.16113012549493322
+          ]
+        },
+        "peak_rel_lot": {
+          "alert_evaluations": 0,
+          "per_100_evaluated_parts": 0.0,
+          "runs_with_any_false_alarm": 0,
+          "runs": 20,
+          "run_rate": 0.0,
+          "run_rate_wilson95": [
+            0.0,
+            0.16113012549493322
+          ]
+        },
+        "peak_force_norm": {
+          "alert_evaluations": 877,
+          "per_100_evaluated_parts": 9.722838137472284,
+          "runs_with_any_false_alarm": 20,
+          "runs": 20,
+          "run_rate": 1.0,
+          "run_rate_wilson95": [
+            0.8388698745050667,
+            1.0
+          ]
+        }
+      }
+    },
+    "detection": {
+      "drift_offset": {
+        "f_zero_kN": {
+          "detected_runs": 20,
+          "runs": 20,
+          "detection_rate": 1.0,
+          "detection_rate_wilson95": [
+            0.8388698745050667,
+            1.0
+          ],
+          "delay_parts": {
+            "median": 19.0,
+            "q25": 19.0,
+            "q75": 19.0
+          },
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_rel_lot": {
+          "detected_runs": 3,
+          "runs": 20,
+          "detection_rate": 0.15,
+          "detection_rate_wilson95": [
+            0.05236779195949584,
+            0.36042329588695743
+          ],
+          "delay_parts": {
+            "median": 129.0,
+            "q25": 114.0,
+            "q75": 189.0
+          },
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_force_norm": {
+          "detected_runs": 20,
+          "runs": 20,
+          "detection_rate": 1.0,
+          "detection_rate_wilson95": [
+            0.8388698745050667,
+            1.0
+          ],
+          "delay_parts": {
+            "median": 9.0,
+            "q25": 9.0,
+            "q75": 9.0
+          },
+          "false_alarm_evaluations_before_drift": 312
+        }
+      },
+      "drift_gain": {
+        "f_zero_kN": {
+          "detected_runs": 0,
+          "runs": 20,
+          "detection_rate": 0.0,
+          "detection_rate_wilson95": [
+            0.0,
+            0.16113012549493322
+          ],
+          "delay_parts": {
+            "median": null,
+            "q25": null,
+            "q75": null
+          },
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_rel_lot": {
+          "detected_runs": 20,
+          "runs": 20,
+          "detection_rate": 1.0,
+          "detection_rate_wilson95": [
+            0.8388698745050667,
+            1.0
+          ],
+          "delay_parts": {
+            "median": 39.0,
+            "q25": 29.0,
+            "q75": 39.0
+          },
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_force_norm": {
+          "detected_runs": 20,
+          "runs": 20,
+          "detection_rate": 1.0,
+          "detection_rate_wilson95": [
+            0.8388698745050667,
+            1.0
+          ],
+          "delay_parts": {
+            "median": 9.0,
+            "q25": 9.0,
+            "q75": 9.0
+          },
+          "false_alarm_evaluations_before_drift": 312
+        }
+      },
+      "drift_friction": {
+        "f_zero_kN": {
+          "detected_runs": 0,
+          "runs": 20,
+          "detection_rate": 0.0,
+          "detection_rate_wilson95": [
+            0.0,
+            0.16113012549493322
+          ],
+          "delay_parts": {
+            "median": null,
+            "q25": null,
+            "q75": null
+          },
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_rel_lot": {
+          "detected_runs": 0,
+          "runs": 20,
+          "detection_rate": 0.0,
+          "detection_rate_wilson95": [
+            0.0,
+            0.16113012549493322
+          ],
+          "delay_parts": {
+            "median": null,
+            "q25": null,
+            "q75": null
+          },
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_force_norm": {
+          "detected_runs": 20,
+          "runs": 20,
+          "detection_rate": 1.0,
+          "detection_rate_wilson95": [
+            0.8388698745050667,
+            1.0
+          ],
+          "delay_parts": {
+            "median": 9.0,
+            "q25": 9.0,
+            "q75": 9.0
+          },
+          "false_alarm_evaluations_before_drift": 312
+        }
+      }
+    },
+    "acceptance": {
+      "nominal/none": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 948,
+          "measured": 1173,
+          "rate": 0.8081841432225064,
+          "wilson95": [
+            0.7846602052015794,
+            0.8296960514093359
+          ],
+          "cluster_bootstrap95": [
+            0.7835296542031591,
+            0.8297690333618477
+          ]
+        },
+        "all": {
+          "accepted": 1946,
+          "measured": 2373,
+          "rate": 0.8200589970501475,
+          "wilson95": [
+            0.8040896132235411,
+            0.8349937821529114
+          ]
+        }
+      },
+      "nominal/rezero": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 948,
+          "measured": 1173,
+          "rate": 0.8081841432225064,
+          "wilson95": [
+            0.7846602052015794,
+            0.8296960514093359
+          ],
+          "cluster_bootstrap95": [
+            0.7835296542031591,
+            0.8297690333618477
+          ]
+        },
+        "all": {
+          "accepted": 1946,
+          "measured": 2373,
+          "rate": 0.8200589970501475,
+          "wilson95": [
+            0.8040896132235411,
+            0.8349937821529114
+          ]
+        }
+      },
+      "drift_offset/none": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 387,
+          "measured": 1173,
+          "rate": 0.329923273657289,
+          "wilson95": [
+            0.3036090251953207,
+            0.3573478954301909
+          ],
+          "cluster_bootstrap95": [
+            0.2954739538855679,
+            0.3679727427597956
+          ]
+        },
+        "all": {
+          "accepted": 1385,
+          "measured": 2373,
+          "rate": 0.5836493889591234,
+          "wilson95": [
+            0.5636956486564156,
+            0.6033327305170219
+          ]
+        },
+        "after_first_primary_alert": {
+          "accepted": 352,
+          "measured": 1111,
+          "rate": 0.31683168316831684,
+          "wilson95": [
+            0.2901451907956117,
+            0.3447805242117939
+          ]
+        },
+        "runs_with_primary_alert": 20
+      },
+      "drift_offset/rezero": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 948,
+          "measured": 1173,
+          "rate": 0.8081841432225064,
+          "wilson95": [
+            0.7846602052015794,
+            0.8296960514093359
+          ],
+          "cluster_bootstrap95": [
+            0.7835296542031591,
+            0.8297690333618477
+          ]
+        },
+        "all": {
+          "accepted": 1946,
+          "measured": 2373,
+          "rate": 0.8200589970501475,
+          "wilson95": [
+            0.8040896132235411,
+            0.8349937821529114
+          ]
+        },
+        "after_first_primary_alert": {
+          "accepted": 913,
+          "measured": 1111,
+          "rate": 0.8217821782178217,
+          "wilson95": [
+            0.7981811662000153,
+            0.8431655506788667
+          ]
+        },
+        "runs_with_primary_alert": 20
+      },
+      "drift_gain/none": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 948,
+          "measured": 1173,
+          "rate": 0.8081841432225064,
+          "wilson95": [
+            0.7846602052015794,
+            0.8296960514093359
+          ],
+          "cluster_bootstrap95": [
+            0.7835296542031591,
+            0.8297690333618477
+          ]
+        },
+        "all": {
+          "accepted": 1946,
+          "measured": 2373,
+          "rate": 0.8200589970501475,
+          "wilson95": [
+            0.8040896132235411,
+            0.8349937821529114
+          ]
+        }
+      },
+      "drift_gain/rezero": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 948,
+          "measured": 1173,
+          "rate": 0.8081841432225064,
+          "wilson95": [
+            0.7846602052015794,
+            0.8296960514093359
+          ],
+          "cluster_bootstrap95": [
+            0.7835296542031591,
+            0.8297690333618477
+          ]
+        },
+        "all": {
+          "accepted": 1946,
+          "measured": 2373,
+          "rate": 0.8200589970501475,
+          "wilson95": [
+            0.8040896132235411,
+            0.8349937821529114
+          ]
+        }
+      },
+      "drift_friction/none": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 981,
+          "measured": 1173,
+          "rate": 0.8363171355498721,
+          "wilson95": [
+            0.8140518091076593,
+            0.8563867613847501
+          ],
+          "cluster_bootstrap95": [
+            0.818259385665529,
+            0.8519148936170213
+          ]
+        },
+        "all": {
+          "accepted": 1979,
+          "measured": 2373,
+          "rate": 0.8339654445849136,
+          "wilson95": [
+            0.8184560156875841,
+            0.8483953218184576
+          ]
+        }
+      },
+      "drift_friction/rezero": {
+        "before_drift": {
+          "accepted": 998,
+          "measured": 1200,
+          "rate": 0.8316666666666667,
+          "wilson95": [
+            0.8094453927480162,
+            0.8517711659753241
+          ],
+          "cluster_bootstrap95": [
+            0.815,
+            0.8466666666666667
+          ]
+        },
+        "after_drift": {
+          "accepted": 981,
+          "measured": 1173,
+          "rate": 0.8363171355498721,
+          "wilson95": [
+            0.8140518091076593,
+            0.8563867613847501
+          ],
+          "cluster_bootstrap95": [
+            0.818259385665529,
+            0.8519148936170213
+          ]
+        },
+        "all": {
+          "accepted": 1979,
+          "measured": 2373,
+          "rate": 0.8339654445849136,
+          "wilson95": [
+            0.8184560156875841,
+            0.8483953218184576
+          ]
+        }
+      }
+    },
+    "recovery": {
+      "by_scenario": {
+        "nominal": {
+          "seeds": 20,
+          "mean_rate_difference_rezero_minus_none": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rezero_started_runs": 0
+        },
+        "drift_offset": {
+          "seeds": 20,
+          "mean_rate_difference_rezero_minus_none": 0.4784628872004676,
+          "bootstrap95": [
+            0.435635593220339,
+            0.5198425628287551
+          ],
+          "rezero_started_runs": 20
+        },
+        "drift_gain": {
+          "seeds": 20,
+          "mean_rate_difference_rezero_minus_none": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rezero_started_runs": 0
+        },
+        "drift_friction": {
+          "seeds": 20,
+          "mean_rate_difference_rezero_minus_none": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "rezero_started_runs": 0
+        }
+      },
+      "note": "rate = accepted/measured over labels of parts at or after the drift start (for nominal: the same split point); rezero only acts after a zero-offset alert, so it can only matter for drift_offset, and a nominal run with rezero_started_runs>0 is a false re-zero"
+    },
+    "check_causes": {
+      "nominal": {
+        "by_reason": {
+          "uncertain_or_borderline": 5619
+        },
+        "flagged_reduction_outside_model_range": 0,
+        "flagged_outside_data_support": 0,
+        "data_support_hook_available": true,
+        "go": 6380,
+        "check": 5619,
+        "stop": 1,
+        "misses_with_go": 19
+      },
+      "drift_offset": {
+        "by_reason": {
+          "reduction_outside_model_range": 4100,
+          "uncertain_or_borderline": 3938,
+          "contact_position_anomaly": 5,
+          "outside_data_support": 1
+        },
+        "flagged_reduction_outside_model_range": 4100,
+        "flagged_outside_data_support": 362,
+        "data_support_hook_available": true,
+        "go": 3945,
+        "check": 8044,
+        "stop": 11,
+        "misses_with_go": 11
+      },
+      "drift_gain": {
+        "by_reason": {
+          "uncertain_or_borderline": 5619
+        },
+        "flagged_reduction_outside_model_range": 0,
+        "flagged_outside_data_support": 0,
+        "data_support_hook_available": true,
+        "go": 6380,
+        "check": 5619,
+        "stop": 1,
+        "misses_with_go": 19
+      },
+      "drift_friction": {
+        "by_reason": {
+          "uncertain_or_borderline": 5380,
+          "outside_data_support": 1
+        },
+        "flagged_reduction_outside_model_range": 0,
+        "flagged_outside_data_support": 1,
+        "data_support_hook_available": true,
+        "go": 6618,
+        "check": 5381,
+        "stop": 1,
+        "misses_with_go": 15
+      }
+    },
+    "friction_trend": {
+      "nominal": {
+        "runs": 20,
+        "mean_estimated_friction_rise": -0.009514411757408647,
+        "mean_true_friction_rise": -0.005392708510118541
+      },
+      "drift_friction": {
+        "runs": 20,
+        "mean_estimated_friction_rise": 0.22447390232259687,
+        "mean_true_friction_rise": 0.3069173166664955
+      }
+    }
+  },
+  "figures": [
+    "results/plant/figures/experiments_summary.png"
+  ],
+  "per_run_wall_s_median": 30.214080214500427,
+  "notes": "Simulated press; drift is injected into simulated sensors/lots; truth and labels come from the same solver the model was trained on. Parts within a run are correlated: use the cluster bootstrap intervals, not only the Wilson ones. Nothing is validated against a real machine.",
+  "created": "2026-10-12T15:00:20+00:00",
+  "wall_clock_s": 1664.4015090465546
+}

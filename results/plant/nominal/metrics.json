@@ -1,0 +1,241 @@
+{
+  "task": "P8",
+  "title": "Plant demo: nominal scenario",
+  "command": "python -m plant.demo --scenario nominal --parts 600 --model surrogates.gp_bo.api:load --artifact artifacts/gp --data full --out results/plant/nominal",
+  "git": "7b5b7ea",
+  "data": {
+    "dataset": "full",
+    "n_runs": 84,
+    "splits": {
+      "test_random": 36,
+      "test_ood_geometry": 33,
+      "test_fine_mesh": 15
+    }
+  },
+  "metrics": {
+    "n_parts": 600,
+    "scenario": "nominal",
+    "wall_clock_s": 156.82795071601868,
+    "latency": {
+      "assumed_cycle_time_s": 6.0,
+      "verdict_deadline_s": 6.0,
+      "end_to_end_ms_p50": 7.95185,
+      "end_to_end_ms_p99": 79.3777479999982,
+      "end_to_end_ms_max": 1241.8771,
+      "edge_internal_ms_p50": 3.64515,
+      "edge_internal_ms_p99": 43.981551999999986,
+      "transport_ms_p50": 3.92765,
+      "predict_ms_p50": 2.5155000000000003,
+      "align_ms_p50": 0.19835,
+      "share_over_deadline": 0.0,
+      "definition": "from the server's stroke-end event to the verdict, including OPC-UA delivery, buffer completion, alignment, feature extraction, friction-posterior prediction; excludes PLC scan time and a real network"
+    },
+    "drift": {
+      "drift_start_part": null,
+      "primary_feature": "f_zero_kN",
+      "first_alert_part": null,
+      "detection_delay_parts": null,
+      "false_alarms_before_drift_primary": 0,
+      "peak_force_norm_alert_evaluations": 44,
+      "peak_force_norm_note": "lot changes (a new ring and friction every lot_len parts) shift this feature, so it alerts without drift; it is informational, not a drift signal",
+      "window_parts": 50,
+      "reference_parts": 100,
+      "stride": 10,
+      "offset_at_end_kN": 0.0,
+      "gain_at_end": 1.0,
+      "drift_type": null,
+      "recovery": "none",
+      "alerts_by_feature": {
+        "f_zero_kN": {
+          "first_alert_part": null,
+          "detection_delay_parts": null,
+          "false_alarm_evaluations_before_drift": 0
+        },
+        "peak_force_norm": {
+          "first_alert_part": null,
+          "detection_delay_parts": null,
+          "false_alarm_evaluations_before_drift": 44
+        },
+        "peak_rel_lot": {
+          "first_alert_part": null,
+          "detection_delay_parts": null,
+          "false_alarm_evaluations_before_drift": 0
+        }
+      },
+      "alerts_by_feature_note": "f_zero_kN watches the load-cell zero (injected channel for drift_offset); peak_rel_lot is the force at 20% reduction relative to the first parts of the same lot (responds to gain drift); peak_force_norm jumps at every lot change and is informational"
+    },
+    "acceptance": {
+      "window_parts": 100,
+      "tolerance_pct": 1.0,
+      "split_at_part": 300,
+      "before_drift": {
+        "accepted": 52,
+        "measured": 60,
+        "rate": 0.8666666666666667,
+        "wilson95": [
+          0.7583460540992789,
+          0.9308597302169036
+        ]
+      },
+      "after_drift": {
+        "accepted": 46,
+        "measured": 58,
+        "rate": 0.7931034482758621,
+        "wilson95": [
+          0.6723053695067633,
+          0.8774863564511679
+        ]
+      },
+      "all": {
+        "accepted": 98,
+        "measured": 118,
+        "rate": 0.8305084745762712,
+        "wilson95": [
+          0.7526576836199572,
+          0.8875177572803592
+        ]
+      }
+    },
+    "recovery": {
+      "mode": "none",
+      "rezero_started_at_part": null,
+      "max_offset_applied_kN": 0.0
+    },
+    "labels": {
+      "sampled_every": 5,
+      "n_received": 118,
+      "n_orphan": 0,
+      "delay_parts_min": 2,
+      "delay_parts_max": 7,
+      "sigma_pct": 0.3
+    },
+    "bundles": {
+      "written": 2,
+      "misses": 20,
+      "misses_outside_predicted_interval": 2,
+      "misses_with_go_verdict": 1,
+      "cap": 20
+    },
+    "verdicts": {
+      "go": 392,
+      "check": 208,
+      "stop": 0
+    },
+    "verdict_reasons": {
+      "inside_spec": 392,
+      "uncertain_or_borderline": 208
+    },
+    "check_causes": {
+      "by_reason": {
+        "uncertain_or_borderline": 208
+      },
+      "flagged_reduction_outside_model_range": 0,
+      "flagged_outside_data_support": 0,
+      "both_flags": 0,
+      "data_support_hook_available": true,
+      "note": "by_reason is exclusive (reduction range wins over data support, which wins over uncertainty); the flagged_* counts are independent. data_support_hook_available=false means the model module has no in_data_support."
+    },
+    "verdict_vs_truth_in_spec": {
+      "go": {
+        "in_spec": 392,
+        "out_of_spec": 0
+      },
+      "check": {
+        "in_spec": 207,
+        "out_of_spec": 1
+      },
+      "stop": {
+        "in_spec": 0,
+        "out_of_spec": 0
+      }
+    },
+    "friction_by_lot": [
+      {
+        "lot": 0,
+        "mf_true": 0.6544436666530696,
+        "mf_post_mean": 0.6517422741288256,
+        "mf_post_std": 0.0068563855343659694
+      },
+      {
+        "lot": 1,
+        "mf_true": 0.24952345609898996,
+        "mf_post_mean": 0.24743588403788697,
+        "mf_post_std": 0.0030659161478814962
+      },
+      {
+        "lot": 2,
+        "mf_true": 0.6651648912101094,
+        "mf_post_mean": 0.6802814456327022,
+        "mf_post_std": 0.027259898568353477
+      },
+      {
+        "lot": 3,
+        "mf_true": 0.39249177601258245,
+        "mf_post_mean": 0.41981793049082616,
+        "mf_post_std": 0.08999696533221123
+      },
+      {
+        "lot": 4,
+        "mf_true": 0.9870878407061838,
+        "mf_post_mean": 0.9640466377281834,
+        "mf_post_std": 0.02234342164327022
+      },
+      {
+        "lot": 5,
+        "mf_true": 0.4775543357153996,
+        "mf_post_mean": 0.6775411338434243,
+        "mf_post_std": 0.17670803000043334
+      },
+      {
+        "lot": 6,
+        "mf_true": 0.24952345609898996,
+        "mf_post_mean": 0.24850852376941496,
+        "mf_post_std": 0.0030639109061040793
+      },
+      {
+        "lot": 7,
+        "mf_true": 0.2768912040453708,
+        "mf_post_mean": 0.27291908714369123,
+        "mf_post_std": 0.03219462940486529
+      },
+      {
+        "lot": 8,
+        "mf_true": 0.7564023294737191,
+        "mf_post_mean": 0.8054684074936994,
+        "mf_post_std": 0.0907460419432009
+      },
+      {
+        "lot": 9,
+        "mf_true": 0.7564023294737191,
+        "mf_post_mean": 0.7507889340795584,
+        "mf_post_std": 0.0488344103219606
+      },
+      {
+        "lot": 10,
+        "mf_true": 0.4187998193270937,
+        "mf_post_mean": 0.41536172704542457,
+        "mf_post_std": 0.0036228839066253927
+      },
+      {
+        "lot": 11,
+        "mf_true": 0.3237778849096769,
+        "mf_post_mean": 0.3216889724674203,
+        "mf_post_std": 0.00364532976124675
+      }
+    ],
+    "friction_mean_abs_error": 0.027954433496794173,
+    "model": {
+      "name": "gp-matern52-ard",
+      "version": "6b15975",
+      "spec": "surrogates.gp_bo.api:load"
+    }
+  },
+  "figures": [
+    "results/plant/nominal/figures/signals_and_alert.png",
+    "results/plant/nominal/figures/acceptance_trend.png",
+    "results/plant/nominal/figures/latency.png"
+  ],
+  "config_hash": "9c0bb27ece53",
+  "notes": "Simulated press replaying solver test runs; nothing here is validated against a real machine. Model: gp-matern52-ard v6b15975. The model was trained on the train split only; the replayed runs come from the held-out test splits.",
+  "created": "2026-10-12T14:32:29+00:00"
+}
