@@ -1,0 +1,30 @@
+# Published experimental ring-compression data, transcribed verbatim (values not altered).
+source:
+  citation: >-
+    M. F. Pop, A. V. Neag, I.-M. Sas-Boca, "Experimental and Numerical Study on the Influence of
+    Lubrication Conditions on AA6068 Aluminum Alloy Cold Deformation Behavior", Materials 16(5), 2045 (2023)
+  doi: 10.3390/ma16052045
+  licence: CC BY 4.0 (open access)
+  table: 'Table 2, "Experimental results of friction coefficient determinate by the Coulomb friction model"'
+  transcribed_via: Europe PMC full text (transcribed by the project lead)
+material: AA6068 aluminium alloy, room temperature (cold), hydraulic press
+ring_initial_mm: {d0i: 15, d0e: 30, h0: 10}     # 6:3:2 ring
+columns: [condition, d1i_mm, d1e_mm, h1_mm, eps, mu]
+notes:
+  eps: height reduction
+  mu: authors' Coulomb friction coefficient, read off a Male-Cockcroft calibration chart
+  plausibility: >-
+    Volume implied by (d1e, d1i, h1) is within about 2% of the initial volume for most rows, but +3.9% for
+    Dry at 0.3 and +5.4% for Mineral oil at 0.3. Metal volume is conserved, so either the outer diameter was
+    measured at the bulge of a barrelled ring (which overstates volume) or a value is off in the paper or in
+    this transcription; not checked against the original PDF. Only the inner diameter is used for the fit.
+rows:
+  - [Dry, 14.1, 32.3, 8, 0.2, 0.15]
+  - [Dry, 13.2, 34.3, 7, 0.3, 0.20]
+  - [Dry, 12.0, 35.8, 6, 0.4, 0.17]
+  - [Mineral oil, 14.7, 32.4, 8, 0.2, 0.07]
+  - [Mineral oil, 14.2, 34.9, 7, 0.3, 0.09]
+  - [Mineral oil, 13.9, 36.6, 6, 0.4, 0.09]
+  - [Graphite in oil, 14.9, 32.18, 8, 0.2, 0.055]
+  - [Graphite in oil, 14.5, 34.15, 7, 0.3, 0.09]
+  - [Graphite in oil, 14.1, 36.3, 6, 0.4, 0.09]

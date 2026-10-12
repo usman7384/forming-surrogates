@@ -1,0 +1,364 @@
+{
+  "task": "V-ext1",
+  "title": "First contact with experiment: AA6068 ring tests (Pop et al. 2023) inverted for m_f",
+  "command": "python -m surrogates.gp_bo.validation_pop2023 --out results/validation --workers 4",
+  "git": "944dd15",
+  "data": {
+    "dataset": "data/external/pop2023_table2.yaml",
+    "n_runs": 52,
+    "splits": {},
+    "source": {
+      "citation": "M. F. Pop, A. V. Neag, I.-M. Sas-Boca, \"Experimental and Numerical Study on the Influence of Lubrication Conditions on AA6068 Aluminum Alloy Cold Deformation Behavior\", Materials 16(5), 2045 (2023)",
+      "doi": "10.3390/ma16052045",
+      "licence": "CC BY 4.0 (open access)",
+      "table": "Table 2, \"Experimental results of friction coefficient determinate by the Coulomb friction model\"",
+      "transcribed_via": "Europe PMC full text (transcribed by the project lead)"
+    }
+  },
+  "metrics": {
+    "rows": [
+      {
+        "condition": "Dry",
+        "eps": 0.2,
+        "d1i_mm": 14.1,
+        "d1e_mm": 32.3,
+        "h1_mm": 8,
+        "mu_authors": 0.15,
+        "id_change_pct_measured": -6.000000000000005,
+        "mf_brentq_solver": 0.3483106465428874,
+        "solver_calls": 9,
+        "mf_sweep_inversion": 0.348229782220597,
+        "mf_interval_reading_resolution": [
+          0.34199110259715,
+          0.35451239911204274
+        ],
+        "mf_if_id_is_bore_minimum": 0.348229782220597,
+        "mf_with_m_0p02": 0.32225951909118444,
+        "largest_mf_reaching_this_reduction_m0p05": 1.0,
+        "sqrt3_mu": 0.25980762113533157,
+        "od_change_pct_measured": 7.666666666666666,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 8.531686972139575,
+        "id_change_pct_solver_at_mf_check": -6.00397954323496,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Dry",
+        "eps": 0.3,
+        "d1i_mm": 13.2,
+        "d1e_mm": 34.3,
+        "h1_mm": 7,
+        "mu_authors": 0.2,
+        "id_change_pct_measured": -12.0,
+        "mf_brentq_solver": 0.3615199671365391,
+        "solver_calls": 9,
+        "mf_sweep_inversion": 0.361415984968509,
+        "mf_interval_reading_resolution": [
+          0.3573232970003492,
+          0.3655432768029176
+        ],
+        "mf_if_id_is_bore_minimum": 0.361415984968509,
+        "mf_with_m_0p02": 0.33662920821185444,
+        "largest_mf_reaching_this_reduction_m0p05": 1.0,
+        "sqrt3_mu": 0.34641016151377546,
+        "od_change_pct_measured": 14.333333333333332,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 13.595133345127518,
+        "id_change_pct_solver_at_mf_check": -12.000890550280818,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Dry",
+        "eps": 0.4,
+        "d1i_mm": 12.0,
+        "d1e_mm": 35.8,
+        "h1_mm": 6,
+        "mu_authors": 0.17,
+        "id_change_pct_measured": -19.999999999999996,
+        "mf_brentq_solver": 0.36597433993292566,
+        "solver_calls": 8,
+        "mf_sweep_inversion": 0.36587094948924404,
+        "mf_interval_reading_resolution": [
+          0.36241655306293585,
+          0.36937131307719534
+        ],
+        "mf_if_id_is_bore_minimum": 0.36587094948924404,
+        "mf_with_m_0p02": 0.3417570276094666,
+        "largest_mf_reaching_this_reduction_m0p05": 0.425,
+        "sqrt3_mu": 0.29444863728670917,
+        "od_change_pct_measured": 19.333333333333314,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 20.13051379897672,
+        "id_change_pct_solver_at_mf_check": -20.025210999502953,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Mineral oil",
+        "eps": 0.2,
+        "d1i_mm": 14.7,
+        "d1e_mm": 32.4,
+        "h1_mm": 8,
+        "mu_authors": 0.07,
+        "id_change_pct_measured": -2.0000000000000018,
+        "mf_brentq_solver": 0.2731460033223142,
+        "solver_calls": 9,
+        "mf_sweep_inversion": 0.2731636974285281,
+        "mf_interval_reading_resolution": [
+          0.26668794943423313,
+          0.2795761426286044
+        ],
+        "mf_if_id_is_bore_minimum": 0.2731745043083252,
+        "mf_with_m_0p02": 0.260749373577325,
+        "largest_mf_reaching_this_reduction_m0p05": 1.0,
+        "sqrt3_mu": 0.12124355652982141,
+        "od_change_pct_measured": 7.999999999999985,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 9.05122571395911,
+        "id_change_pct_solver_at_mf_check": -1.998938893214297,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Mineral oil",
+        "eps": 0.3,
+        "d1i_mm": 14.2,
+        "d1e_mm": 34.9,
+        "h1_mm": 7,
+        "mu_authors": 0.09,
+        "id_change_pct_measured": -5.333333333333334,
+        "mf_brentq_solver": 0.2821085722873767,
+        "solver_calls": 7,
+        "mf_sweep_inversion": 0.2823044246814935,
+        "mf_interval_reading_resolution": [
+          0.2783969726232818,
+          0.28620314891541676
+        ],
+        "mf_if_id_is_bore_minimum": 0.2823044246814935,
+        "mf_with_m_0p02": 0.2719331850339598,
+        "largest_mf_reaching_this_reduction_m0p05": 1.0,
+        "sqrt3_mu": 0.15588457268119893,
+        "od_change_pct_measured": 16.333333333333332,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 14.591954558263453,
+        "id_change_pct_solver_at_mf_check": -5.316921830626564,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Mineral oil",
+        "eps": 0.4,
+        "d1i_mm": 13.9,
+        "d1e_mm": 36.6,
+        "h1_mm": 6,
+        "mu_authors": 0.09,
+        "id_change_pct_measured": -7.333333333333336,
+        "mf_brentq_solver": 0.2520077508846246,
+        "solver_calls": 8,
+        "mf_sweep_inversion": 0.25193782996117975,
+        "mf_interval_reading_resolution": [
+          0.24922382375537713,
+          0.2546571251049544
+        ],
+        "mf_if_id_is_bore_minimum": 0.2519378519424196,
+        "mf_with_m_0p02": 0.24361223087735945,
+        "largest_mf_reaching_this_reduction_m0p05": 0.425,
+        "sqrt3_mu": 0.15588457268119893,
+        "od_change_pct_measured": 21.999999999999996,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 21.91775004783625,
+        "id_change_pct_solver_at_mf_check": -7.34035019317928,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Graphite in oil",
+        "eps": 0.2,
+        "d1i_mm": 14.9,
+        "d1e_mm": 32.18,
+        "h1_mm": 8,
+        "mu_authors": 0.055,
+        "id_change_pct_measured": -0.6666666666666599,
+        "mf_brentq_solver": 0.24689663146828936,
+        "solver_calls": 8,
+        "mf_sweep_inversion": 0.24700452034393597,
+        "mf_interval_reading_resolution": [
+          0.2403584088965319,
+          0.2535969926171594
+        ],
+        "mf_if_id_is_bore_minimum": 0.2467146382627097,
+        "mf_with_m_0p02": 0.2380505348698457,
+        "largest_mf_reaching_this_reduction_m0p05": 1.0,
+        "sqrt3_mu": 0.09526279441628825,
+        "od_change_pct_measured": 7.266666666666666,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 9.242985831648243,
+        "id_change_pct_solver_at_mf_check": -0.6618152193949012,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Graphite in oil",
+        "eps": 0.3,
+        "d1i_mm": 14.5,
+        "d1e_mm": 34.15,
+        "h1_mm": 7,
+        "mu_authors": 0.09,
+        "id_change_pct_measured": -3.3333333333333326,
+        "mf_brentq_solver": 0.25852700690291497,
+        "solver_calls": 8,
+        "mf_sweep_inversion": 0.2587152111982469,
+        "mf_interval_reading_resolution": [
+          0.2547517516464433,
+          0.2626679650685237
+        ],
+        "mf_if_id_is_bore_minimum": 0.25882271893503395,
+        "mf_with_m_0p02": 0.25103298339826946,
+        "largest_mf_reaching_this_reduction_m0p05": 1.0,
+        "sqrt3_mu": 0.15588457268119893,
+        "od_change_pct_measured": 13.83333333333332,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 14.907007595021838,
+        "id_change_pct_solver_at_mf_check": -3.316771482077119,
+        "solver_reached_reduction": true
+      },
+      {
+        "condition": "Graphite in oil",
+        "eps": 0.4,
+        "d1i_mm": 14.1,
+        "d1e_mm": 36.3,
+        "h1_mm": 6,
+        "mu_authors": 0.09,
+        "id_change_pct_measured": -6.000000000000005,
+        "mf_brentq_solver": 0.24116892722706604,
+        "solver_calls": 8,
+        "mf_sweep_inversion": 0.24112952298270657,
+        "mf_interval_reading_resolution": [
+          0.23844787142457194,
+          0.24381927318373792
+        ],
+        "mf_if_id_is_bore_minimum": 0.24115015424325015,
+        "mf_with_m_0p02": 0.23352611075802887,
+        "largest_mf_reaching_this_reduction_m0p05": 0.425,
+        "sqrt3_mu": 0.15588457268119893,
+        "od_change_pct_measured": 20.999999999999996,
+        "od_change_pct_measured_resolution": 0.16666666666666666,
+        "od_change_pct_solver_at_mf": 22.135623842518505,
+        "id_change_pct_solver_at_mf_check": -6.0083605799928,
+        "solver_reached_reduction": true
+      }
+    ],
+    "by_lubricant": {
+      "Dry": {
+        "mf_per_reduction": [
+          0.3483106465428874,
+          0.3615199671365391,
+          0.36597433993292566
+        ],
+        "mf_mean": 0.3586016512041174,
+        "mf_spread_max_minus_min": 0.01766369339003826,
+        "mf_sd": 0.009186345408016735,
+        "mu_authors_mean": 0.17333333333333334,
+        "sqrt3_mu_mean": 0.3002221399786054,
+        "ratio_mf_to_sqrt3_mu": 1.1944543837762007
+      },
+      "Mineral oil": {
+        "mf_per_reduction": [
+          0.2731460033223142,
+          0.2821085722873767,
+          0.2520077508846246
+        ],
+        "mf_mean": 0.2690874421647718,
+        "mf_spread_max_minus_min": 0.030100821402752054,
+        "mf_sd": 0.015455380981464926,
+        "mu_authors_mean": 0.08333333333333333,
+        "sqrt3_mu_mean": 0.14433756729740643,
+        "ratio_mf_to_sqrt3_mu": 1.8642924860325465
+      },
+      "Graphite in oil": {
+        "mf_per_reduction": [
+          0.24689663146828936,
+          0.25852700690291497,
+          0.24116892722706604
+        ],
+        "mf_mean": 0.2488641885327568,
+        "mf_spread_max_minus_min": 0.01735807967584893,
+        "mf_sd": 0.008844726853313884,
+        "mu_authors_mean": 0.07833333333333332,
+        "sqrt3_mu_mean": 0.13567731325956203,
+        "ratio_mf_to_sqrt3_mu": 1.834235824353765
+      }
+    },
+    "ordering_by_mf": [
+      "Dry",
+      "Mineral oil",
+      "Graphite in oil"
+    ],
+    "ordering_by_authors_mu": [
+      "Dry",
+      "Mineral oil",
+      "Graphite in oil"
+    ],
+    "sweep_final_reduction": {
+      "m=0.05": {
+        "0.0": 0.4,
+        "0.025": 0.4,
+        "0.05": 0.4,
+        "0.075": 0.4,
+        "0.1": 0.4,
+        "0.125": 0.4,
+        "0.15": 0.4,
+        "0.175": 0.4,
+        "0.2": 0.4,
+        "0.225": 0.4,
+        "0.25": 0.4,
+        "0.275": 0.4,
+        "0.3": 0.4,
+        "0.325": 0.4,
+        "0.35": 0.4,
+        "0.375": 0.4,
+        "0.4": 0.4,
+        "0.425": 0.4,
+        "0.45": 0.39,
+        "0.475": 0.37999999999999995,
+        "0.5": 0.37,
+        "0.6": 0.35,
+        "0.7": 0.32999999999999996,
+        "0.8": 0.32,
+        "0.9": 0.32,
+        "1.0": 0.32
+      },
+      "m=0.02": {
+        "0.0": 0.4,
+        "0.025": 0.4,
+        "0.05": 0.4,
+        "0.075": 0.4,
+        "0.1": 0.4,
+        "0.125": 0.4,
+        "0.15": 0.4,
+        "0.175": 0.4,
+        "0.2": 0.4,
+        "0.225": 0.4,
+        "0.25": 0.4,
+        "0.275": 0.4,
+        "0.3": 0.4,
+        "0.325": 0.4,
+        "0.35": 0.4,
+        "0.375": 0.4,
+        "0.4": 0.4,
+        "0.425": 0.39,
+        "0.45": 0.37999999999999995,
+        "0.475": 0.37,
+        "0.5": 0.36,
+        "0.6": 0.34,
+        "0.7": 0.32999999999999996,
+        "0.8": 0.32,
+        "0.9": 0.32,
+        "1.0": 0.32
+      }
+    },
+    "rate_exponent_m": 0.05,
+    "sensitivity_m": 0.02,
+    "reading_resolution_mm": 0.05
+  },
+  "figures": [
+    "results/validation/figures/ring_test_pop2023.png"
+  ],
+  "notes": "Consistency check of the Tresca friction model against one published dataset, not a validation: the authors' mu is Coulomb, read off a Male-Cockcroft chart; m_f ~ sqrt(3) mu assumes contact pressure ~ flow stress (von Mises); m and the material curve of AA6068 are not known here (no hardening in the solver); one lab, one alloy. ID is the solver's mid-plane inner diameter; the bore-minimum variant is reported.",
+  "created": "2026-10-12T14:51:38"
+}
