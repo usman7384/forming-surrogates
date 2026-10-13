@@ -25,6 +25,10 @@ on them. Every number on this page sits in a results file under `results/`, writ
 ## Results
 
 ### 1. The solver is verified (not validated)
+![Two standard rings pressed to 35% in the finite-element solver: low friction, the hole grows; high friction, it shrinks](docs/media/ring_compression.gif)
+
+*Real solver output, not a mock-up: the deforming mesh coloured by strain, the die force and the hole size for a low-friction and a high-friction ring ([MP4](docs/media/ring_compression.mp4), made by `python tools/animate_ring.py`).*
+
 Reproduced here with `python -m ringsim.verify --out results/verify` ([report](docs/reference/verify_report.md),
 [data](results/verify/results.json)).
 
@@ -335,4 +339,4 @@ without retraining; only retraining is the multi-hour job. The dataset card is w
 | `results/` | every reported number, with the command that produced it |
 | `docs/explain/` | plain-language explanations of each area |
 | `review/` | three independent reviews: science and correctness |
-| `tools/` | fresh-clone reproduction check, overview-diagram script |
+| `tools/` | fresh-clone reproduction check, overview-diagram and ring-animation scripts |

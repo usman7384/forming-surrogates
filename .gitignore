@@ -9,3 +9,6 @@ artifacts/**/*.pt.tmp
 forming-data/
 .claude/
 artifacts/gnn/**/last.pt
+
+# solver cache of tools/animate_ring.py
+docs/media/_ring_runs.npz
